@@ -1,0 +1,140 @@
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-md navbar-light bg_lgray fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-secondary" href="#">
+      <img src="<%= asset_path('logo.png') %>" class="img-fluid" alt="Logo">
+      <p class="h4 d-none d-md-inline-block">Terrenos Urbanos</p>
+      <p class="h6 d-md-none d-inline-block text-center">Terrenos<br>Urbanos</p>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon mb-0"></span> 
+    </button>
+
+    <!--<div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          <a class="btn btn-outline-secondary mr-2" href="#" role="button">Iniciar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary mr-2" href="/root" role="button">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</nav><!--END NAVBAR-->
+
+<!--CONTAINER-->
+<div class="container-fluid">
+  <!--ROW APP-->
+  <div class="row" id="app">
+  
+     <div class="col-md-7 app-map" id="map" style="height: 600px">
+         
+     </div>
+
+     <div class="col-md-5 app-properties" id="properties">
+
+        <div>
+         <form class="search_form_box" method="get">
+          <div>
+            <label>( % ) Área útil vendible</label>
+            <input type="number" name="user_area_util" class="search_form_w" id="user_area_util" value="{{ user_area_util }}">
+          </div>
+          <div>
+            <label>Precio de venta / m2</label>
+            <input type="number" name="user_valor_mc" class="search_form_w" id="user_valor_mc" value="{{ user_valor_mc }}">
+          </div>
+          <div>
+            <label>( % ) Factor ALFA</label>
+            <input type="number" name="user_alfa" class="search_form_w" id="user_f_alfa" value="{{ user_alfa }}">
+          </div>
+          <div>
+            <div id="calcule" class="btn btn-default">Calcular</div>
+          </div>
+         </form>
+        </div>
+
+        <div id="text_non_property">
+          <h3>Selecciona un lote del mapa para ver información</h3>
+        </div>
+        
+        <!-- PREDIO # 1 -->
+        <div class="property-box" id="property-1">
+
+          <div class="property-box-head col-md-12">
+              <p class="property-num">1</p>
+              <h4 id="font_dir_cat">DIRECCION CATASTRAL: <b id="dir_cat_1">{{ direccion_catastral1 }}</b> 
+              <br> 
+              <p>Área del predio: <b id="area_predio_1">{{ area1 }}</b> m2     Frente: <b id="frente_predio_1">{{ frente1 }}</b> m
+              <br>
+              Área construida: <b id="area_c_predio_1">{{ area_c1 }}</b> m2     Altura en pisos: <b id="a_p_c_predio_1">{{ a_p_c1 }}</b>
+              <br>
+              Uso: <b id="uso_predio_1">{{ uso1 }}</b>
+              </p></h4>
+          </div>
+          
+          <div class="col-md-6">
+            <ul class="property-list">
+              <li><h5>NORMATIVA</h5></li>
+              <li>Índice máximo de ocupación: <b id="i_m_o_norma_1">{{ i_m_o1 }}</b></li>
+              <li>Índice máximo de construcción: <b id="i_m_c_norma_1">{{ i_m_c1 }}</b></li>
+              <li>Altura máxima permitida: <b id="a_m_p_norma_1">{{ a_m_p1 }} pisos</b></li>
+              <li>Tipología: <b id="tipologia_norma_1">{{ tipologia1 }}</b></li>
+              <li>Antejardín: <b id="antejardin_norma_1">{{ antejardin1 }}</b></li>
+              <li>Semisotano: <b id="semisotano_norma_1">{{ semisotano1 }}</b></li>
+              <li>Subdivisión: <b id="subdivision_norma_1">{{ subdivision1 }}</b>
+                               <br>Area minima: <b id="sub_area_min_norma_1">{{ sub_area_min1 }}</b><br>Frente minimo: <b id="sub_area_frente_norma_1">{{ sub_frente_min1 }}</b>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <ul class="property-list">
+              <li><h5>POTENCIAL DE DESARROLLO</h5></li>
+              <li>Área máxima de ocupación: <b id="a_m_o_1">{{ a_m_o1 }}</b> m2</li>
+              <li>Área máxima de construcción: <b id="a_m_c_1">{{ a_m_c1 }}</b> m2</li>
+              <li>Area útil vendible: <b id="p_area_util_1"></b> m2</li>
+              <li>Valor de ventas: <b id="p_valor_ventas_1"> </b> millones</li>
+              <!--<li>Rango de incidencia “alfa”: <b> %</b></li>-->
+              <li>Valor máximo del terreno: <b id="t_valor_max_1"></b> millones</li>
+              <li>Precio unitario máximo: <b id="t_valor_mc_1"></b> / m2</li>
+              <br>
+              <li>Valor del terreno: <b id="valor_terreno"></b> millones</li>
+            </ul>
+          </div>
+
+        </div>
+     </div>
+  </div><!--END ROW APP-->
+</div><!--END CONTAINER-->
+
+<script type="text/javascript">
+  // THIS PART FOR THE SIZE OF THE WINDOW
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+
+  // THIS PART FOR THE SIZE OF THE MAP
+  $(document).ready(function(){
+    $('div#map').css("height", h);
+  });
+
+  // THIS PART FOR THE MAP LOAD
+  $(document).ready(function() {
+    var mymap = L.map('map').setView([11.009417, -74.812083], 15);
+
+          L.tileLayer('https://api.mapbox.com/styles/v1/lternera/cj3yv171306ma2rprn1soczke/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'lternera.cj3yv8zhw0jap2rjxukdytcqf',
+            accessToken: 'pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA'
+          }).addTo(mymap);
+
+    var marker = L.marker([11.009417, -74.812083]).addTo(mymap);
+    marker.bindTooltip("<b>$5.000 m</b>", {direction: 'top', permanent: true}).openTooltip();
+    
+    var marker2 = L.marker([11.010228, -74.814828]).addTo(mymap);
+    marker2.bindTooltip("<b>$7.200 m</b>", {direction: 'top', permanent: true}).openTooltip();
+  });
+</script>

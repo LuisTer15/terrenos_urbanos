@@ -33,11 +33,10 @@
     <div class=" col-12 col-md-8 ml-auto mr-auto">
       <div class="input-group">
         <select class="custom-select bg-secondary text-white" id="input_city">
-          <option selected>Seleccione de la lista...</option>
-          <option value="1">Barranquilla</option>
+          <option selected>Barranquilla</option>
         </select>
         <div class="input-group-append">
-          <button class="btn btn-dark" type="button">Buscar</button>
+          <%= link_to "Buscar", app_pages_app_path, class: "btn btn-dark", role: "button" %>
         </div>
       </div>
     </div>
@@ -130,4 +129,5 @@
     </div>
   </div>  
 </footer>
-</div><!--END TERMS MODAL-->
+
+<%= render 'terms'%>
