@@ -1,0 +1,293 @@
+h1 {
+    margin-top: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Raleway';
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+}
+
+/*li {
+    font-family: 'Raleway';
+    font-weight: 500;
+}*/
+
+label {
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: white;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px solid #202020;
+    margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: unset;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: unset;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color: unset;
+}
+
+.navbar-text {
+    font-size: 12px;
+    margin-top: 9px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+#btn_menu {
+    padding-right: 12px;
+}
+
+#app {
+    display: block;
+}
+
+.app-head {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-bottom: 1px solid darkgray;
+    height: 60px;
+}
+
+.app-properties {
+    background-color: #f5f5f5;
+    border: 1px solid lightgray;
+    border-top-width: 51px;
+    float: right;
+}
+
+#text_non_property {
+    color: #cacaca;
+    text-align: center;
+}
+
+.app-map {
+    position: fixed;
+    border: 1px solid lightgray;
+    border-top-width: 51px;
+}
+
+.property-box-head {
+    display: inline-flex;
+}
+
+.property-box {
+    border-bottom: 1px solid darkgray;
+    display: inline-block;
+    padding-top: 15px;
+    font-size: 12px;
+}
+
+.property-num {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    color: darkgray;
+    margin-right: 20px;
+}
+
+.property-list {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.well {
+    background-color: #202020;
+    color: white;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+.button-menu {
+    color: black;
+    background-color: transparent;
+    transition: all 0.2s;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.button-menu:hover {
+    color: black;
+    font-weight: bold;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.button-menu:active {
+    color: black;
+    font-weight: bold;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.button-consulta {
+    color: black;
+    transition: all 0.2s;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.button-consulta:hover {
+    color: black;
+    font-weight: bold;
+    border-right: 1px solid darkgray;
+    border-left: 1px solid darkgray;
+}
+
+.button-consulta:active {
+    color: black;
+    font-weight: bold;
+    border-right: 1px solid darkgray;
+    border-left: 1px solid darkgray;
+}
+
+.button-search {
+    color: white;
+    background-color: #202020;
+    transition: all 0.2s;
+}
+
+.button-search:hover {
+    color: white;
+    background-color: #202020;
+    font-weight: bold;
+}
+
+#calcule {
+    margin-top: 20px;
+}
+
+
+/* FOR THE LOGIN FORM */
+
+
+.search_form_box {
+    display: inline-flex;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.user_form_box {
+    display: inline-flex;
+    font-size: 12px;
+    margin-top: 5px;
+    padding-top: 40px;
+}
+
+.search_form {
+    width: 90%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 1px solid #505050;
+    border-radius: 1px;
+    font-size: 14px;
+    background-color: #505050;
+}
+
+.search_form_w {
+    width: 90%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 1px solid gray;
+    border-radius: 1px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.button_user_search {
+    background-color: rgb(53,152,219);
+    color: white;
+    margin-top: 18px;
+    border: 1px solid rgb(53,152,219);
+    border-radius: 1px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+    width: 100%;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.button_user_search:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    border-radius: 1px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1025px) {
+    .search_form_box {
+        font-size: 10px;
+    }
+
+    .user_form_box {
+        font-size: 11px;
+    }
+
+    #consult {
+        width: 105px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .property-list {
+        font-size: 10px;
+    }
+
+    h5 {
+        font-size: 11px;
+        font-weight: bold;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .app-properties {
+        background-color: #f5f5f5;
+        border: 1px solid lightgray;
+        float: right;
+    }
+
+    .app-map {
+        position: relative;
+        height: 300px;
+    }
+}
