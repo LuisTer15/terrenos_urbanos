@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 1
+  location: MyString
+  address: MyString
+  area_land: 9.99
+  area_build: 9.99
+  front_dim: 9.99
+  floors_build: 1
+  use_build: MyString
+
+two:
+  code: 1
+  location: MyString
+  address: MyString
+  area_land: 9.99
+  area_build: 9.99
+  front_dim: 9.99
+  floors_build: 1
+  use_build: MyString
