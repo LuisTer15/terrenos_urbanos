@@ -1,7 +1,7 @@
 <!--NAVBAR-->
-<nav class="navbar navbar-expand-md navbar-light bg_lgray">
+<nav class="navbar navbar-expand-md navbar-light">
   <div class="container">
-    <a class="navbar-brand text-secondary" href="#">
+    <a class="navbar-brand text-dark" href="#">
       <img src="<%= asset_path('logo.png') %>" class="img-fluid" alt="Logo">
       <p class="h4 d-none d-md-inline-block">Terrenos Urbanos</p>
       <p class="h6 d-md-none d-inline-block text-center">Terrenos<br>Urbanos</p>
@@ -12,122 +12,41 @@
 
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav ml-auto">
-        <!--
         <li class="nav-item">
-          <a class="btn btn-outline-secondary mr-2" href="#" role="button">Iniciar sesión</a>
-        </li>-->
-        <li class="nav-item">
-          <a class="btn btn-primary mr-2" href="/root" role="button">Iniciar Sesión</a>
+          <a class="btn btn-outline-primary mr-2" href="/root" role="button">Iniciar Sesión</a>
         </li>
       </ul>
     </div>
   </div>
 </nav><!--END NAVBAR-->
 <!--JUMBOTRON-->
-<div class="jumbotron jumbotron-fluid bg_lgray text-center mb-0" id="head">
+<div class="jumbotron jumbotron-fluid text-center mb-0" id="head">
   <div class="container">
     <h1 class="display-4">Terrenos Urbanos<br>para proyectos inmobiliarios</h1>
-    <p class="lead">Busque, compare y gestione el mejor terreno para su proyecto de forma rápida y confiable</p>
+    <p class="lead">Busque, compare y gestione el mejor terreno para su proyecto inmobiliario de forma rápida y confiable</p>
     <hr class="my-4">
     <p class="font-weight-bold">Inicie la búsqueda seleccionando la ciudad:</p>
     <div class=" col-12 col-md-8 ml-auto mr-auto">
       <div class="input-group">
-        <select class="custom-select bg-secondary text-white" id="input_city">
+        <select class="custom-select bg-secondary text-white font-weight-bold" id="input_city">
           <option selected>Barranquilla</option>
         </select>
         <div class="input-group-append">
-          <%= link_to "Buscar", app_pages_app_path, class: "btn btn-dark", role: "button" %>
+          <%= link_to "Buscar", app_pages_app_path, class: "btn btn-dark font-weight-bold", role: "button" %>
         </div>
       </div>
     </div>
   </div>  
 </div><!--END JUMBOTRON-->
-
+<!--CONTAINER-->
 <div class="container">
-  <!--VIDEO-->
-  <div class="row" id="video">
-    <div class="col-md-12 col-lg-8 ml-auto mr-auto mr-5">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/TIHr3pcGS4c" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div><!--END VIDEO-->
-  <!--FEATURES-->
-  <div class="row text-center" id="features">
-    <!--FEATURE 5-->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card border-white p-1">
-        <div class="card-body">
-          <img class="img-fluid mb-3" src="<%= asset_path('feature5.png') %>" alt="feature 5">
-          <h5 class="card-title">Inmuebles y terrenos en venta</h5>
-          <p class="card-text">Visualize en tiempo real los inmuebles y terrenos en venta en el mapa a través del sistema de información geográfica y consulte los detalles del vendedor para iniciar un contacto.</p>
-        </div>
-      </div>
-    </div><!-- END FEATURE 5-->
-    <!--FEATURE 1-->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card border-white p-1">
-        <div class="card-body">
-          <img class="img-fluid mb-3" src="<%= asset_path('feature1.png') %>" alt="feature 1">
-          <h5 class="card-title">Consulta en tiempo real</h5>
-          <p class="card-text">Consulte los terrenos por medio de su dirección catastral o selecciónelos directamente desde el mapa para ver información acerca de las características existentes, la normativa aplicable según el POT y el potencial de desarrollo.</p>
-        </div>
-      </div>
-    </div><!-- END FEATURE 1-->
-    <!--FEATURE 3-->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card border-white p-1">
-        <div class="card-body">
-          <img class="img-fluid mb-3" src="<%= asset_path('feature3.png') %>" alt="feature 3">
-          <h5 class="card-title">Analize y compare resultados</h5>
-          <p class="card-text">Ingrese datos para el análisis de los terrenos según las necesidades de su proyecto, como el porcentaje de área vendible, el precio promedio de venta por metro cuadrado y el porcentaje del factor alfa para aplicar el método residual potencial.</p>
-        </div>
-      </div>
-    </div><!-- END FEATURE 3-->
-    <!--FEATURE 6-->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card border-white p-1">
-        <div class="card-body">
-          <img class="img-fluid mb-3" src="<%= asset_path('feature6.png') %>" alt="feature 6">
-          <h5 class="card-title">Aplicación web en la nube</h5>
-          <p class="card-text">Accede a la aplicación desde cualquier dispositivo, en cualquier lugar y en cualquier momento, solo con una conexión a internet. Utilice el poder de los sistemas de información geográfica a su favor.</p>
-        </div>
-      </div>
-    </div><!-- END FEATURE 5-->
-  </div><!--END FEATURES-->
-</div>
 
-<footer id="footer">
-  <div class="container-fluid">
-    <hr class="m-0">
-    <div class="row bg_lgray">
-      <div class="col-12 col-md-4 m-3">
-        <img class="img-fluid float-right" src="<%= asset_path('ICON_black_footer.png') %>">
-      </div>
-      <div class=" col-12 col-md-3 mt-3">
-        <ul class="list-unstyled">
-          <li><h6>Contacto</h6></li>
-          <li class="small">Correo electrónico:</li>
-          <li class="small">contacto@terrenosurbanos.co</li>
-          <br>
-          <li class="small">Barránquilla, Atlántico</li>
-          <li class="small">COLOMBIA</li>
-        </ul>
-      </div>
-      <div class="col-12 col-md-3 mt-3">
-        <ul class="list-unstyled">
-          <li><a href="#" class="h6" data-toggle="modal" data-target="#modal_terms">Términos y condiciones de uso</a></li>
-          <li><a href="#privacy" class="h6" data-toggle="modal" data-target="#modal_terms">Política de privacidad</a></li>
-        </ul>
-      </div>
-    </div>
+  <%= render 'features'%>
 
-    <div class="row bg-secondary">
-      <div class="col-12 text-center align-text-bottom text-white">
-        <p class="m-1"><small>Copyright © 2017 Terrenos Urbanos S.A.S. Todos los derechos reservados.</small></p>
-      </div>
-    </div>
-  </div>  
-</footer>
+  <%= render 'video'%> 
+
+</div><!--END CONTAINER-->
+
+<%= render 'footer'%>
 
 <%= render 'terms'%>

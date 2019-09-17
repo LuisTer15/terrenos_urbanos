@@ -1,15 +1,62 @@
+/* JUMBOTRON */
+
 #head {
-  padding-bottom: 170px;
+  padding-bottom: 150px;
+  background-color: white;
+  
+  .lead {
+    margin: 0px 50px 0px 50px;
+  }
 }
 
-#video {
-  padding: 80px 0 80px 0;
+@media only screen and (max-width: 767px) {
+    #head {
+      padding-bottom: 70px;
+
+      h1 {
+        font-size: 2.7rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .lead {
+        margin: 0px 20px 0px 20px;
+      }
+    }
 }
+
+/* END JUMBOTRON */
+
+
+/* FEATURES */
 
 #features {
-  padding: 80px 0 80px 0;
+  padding: 70px 0 70px 0;
 }
 
-.bg_lgray {
-  background-color: #f1f1f1;
+.feature h5 {
+  font-size: 1rem;
+}
+
+.feature p {
+  font-size: 0.9rem;
+}
+
+.feature img {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .feature img {
+      width: 60%;
+    }
+}
+
+/* END FEATURES */
+
+
+#video {
+  padding: 70px 0 150px 0;
 }
