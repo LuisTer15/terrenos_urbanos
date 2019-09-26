@@ -9,6 +9,10 @@
   }
 }
 
+#input_city {
+  background-color: #ddd;
+}
+
 @media only screen and (max-width: 767px) {
     #head {
       padding-bottom: 70px;
@@ -60,3 +64,21 @@
 #video {
   padding: 70px 0 150px 0;
 }
+
+/* FOOTER */
+
+@media only screen and (max-width: 767px) {
+    #footer h6 {
+      font-size: 0.9rem;
+    }
+
+    #footer li {
+      font-size: 0.7rem;
+    }
+
+    #footer .h6 {
+      font-size: 0.9rem;
+    }
+}
+
+/* END FOOTER */
