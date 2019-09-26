@@ -6,9 +6,10 @@
       <p class="h4 d-none d-md-inline-block">Terrenos Urbanos</p>
       <p class="h6 d-md-none d-inline-block text-center">Terrenos<br>Urbanos</p>
     </a>
+    <!--
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
       <span class="navbar-toggler-icon mb-0"></span> 
-    </button>
+    </button>-->
   </div>
 </nav><!--END NAVBAR-->
 
@@ -17,56 +18,70 @@
   <!--ROW APP-->
   <div class="row" id="app">
   
-     <div class="col-md-6 app-map" id="map" style="height: 600px">
+     <div class="col-md-6 app-map" id="map" style="height: 400px">
          
      </div>
 
      <div class="col-md-6 app-properties" id="properties">
 
-        <div>
-         <form class="search_form_box" method="get">
-          <div>
-            <label>( % ) Área útil vendible</label>
-            <input type="number" name="user_area_util" class="search_form_w" id="user_area_util" value="{{ user_area_util }}">
-          </div>
-          <div>
-            <label>Precio de venta / m2</label>
-            <input type="number" name="user_valor_mc" class="search_form_w" id="user_valor_mc" value="{{ user_valor_mc }}">
-          </div>
-          <div>
-            <label>( % ) Factor ALFA</label>
-            <input type="number" name="user_alfa" class="search_form_w" id="user_f_alfa" value="{{ user_alfa }}">
-          </div>
-          <div>
-            <div id="calcule" class="btn btn-outline-secondary btn-small">Calcular</div>
-          </div>
-         </form>
-        </div>
-
-        <div class="card mb-3" id="property_card">
-          <div class="card-header font-weight-bold">ID: #1 --- $5.000.000.000</div>
-          <div class="card-body">
-            <p>Dirección Catasttral:</p>
-            <p>Área Terreno:</p>
-            <p>Área construida:</p>
-            <p>Altura en pisos:</p>
-            <p>Uso:</p>
-          </div>
-
-          <div class="card-body">
-            <div class="card-group">
-              <div class="card">
-                <div class="card-header">
-                  NORMATIVA
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Índice máximo de ocupación:</li>
-                  <li class="list-group-item">Índice máximo de construcción:</li>
-                  <li class="list-group-item">Altura máxima permitida:</li>
-                  <li class="list-group-item">Tipología:</li>
-                </ul>
+          <div class="card-group mt-3 mb-3" id="calcule_box">
+            <div class="card">
+              <div class="card-body">
+                <label>( % ) Área útil vendible</label>
+                <input type="number" name="user_area_util" class="search_form_w" id="user_area_util" value="{{ user_area_util }}">
               </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <label>Precio de venta / m2</label>
+                <input type="number" name="user_valor_mc" class="search_form_w" id="user_valor_mc" value="{{ user_valor_mc }}">
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <label>( % ) Factor ALFA</label>
+                <input type="number" name="user_alfa" class="search_form_w" id="user_f_alfa" value="{{ user_alfa }}">
+              </div>
+            </div>
+          </div>
 
+
+        <!--PROPERTY CARD-->
+        <div class="card mb-3 border-primary" id="property_card">
+          <div class="card-header font-weight-bold  bg-primary text-white h5">ID: #1 --- $5.000.000.000</div>
+          <!--DESCRIPCION & NORMATIVA-->
+          <div class="card-body">
+              <div class="card-group">
+
+                <div class="card">
+                  <div class="card-header">
+                    DESCRIPCIÓN
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Dirección Catasttral:</li>
+                    <li class="list-group-item">Área Terreno:</li>
+                    <li class="list-group-item">Área construida:</li>
+                    <li class="list-group-item">Altura en pisos:</li>
+                    <li class="list-group-item">Uso:</li>
+                  </ul>
+                </div>      
+
+                <div class="card">
+                  <div class="card-header">
+                    NORMATIVA
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Índice máximo de ocupación:</li>
+                    <li class="list-group-item">Índice máximo de construcción:</li>
+                    <li class="list-group-item">Densidad máxima:</li>
+                    <li class="list-group-item">Altura máxima:</li>
+                    <li class="list-group-item">Tipología:</li>
+                  </ul>
+                </div>    
+              </div>
+          </div>
+          <!--POTENCIAL DE DESARROLLO-->
+          <div class="card-body">
               <div class="card">
                 <div class="card-header">
                   POTENCIAL DE DESARROLLO
@@ -80,9 +95,8 @@
                   <li class="list-group-item">Precio unitario máximo:</li>
                 </ul>
               </div>          
-            </div>
           </div>
-        </div>
+        </div><!--END PROPERTY CARD-->
 
         <!--
         <div id="text_non_property">
