@@ -1,7 +1,7 @@
 <!--NAVBAR-->
-<nav class="navbar navbar-expand-md navbar-light bg_lgray fixed-top">
+<nav class="navbar navbar-expand-md navbar-light bg_lgray fixed-top" id="app_navbar">
   <div class="container">
-    <a class="navbar-brand text-secondary" href="#">
+    <a class="navbar-brand text-secondary" href="/">
       <img src="<%= asset_path('logo.png') %>" class="img-fluid" alt="Logo">
       <p class="h4 d-none d-md-inline-block">Terrenos Urbanos</p>
       <p class="h6 d-md-none d-inline-block text-center">Terrenos<br>Urbanos</p>
@@ -9,18 +9,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
       <span class="navbar-toggler-icon mb-0"></span> 
     </button>
-
-    <!--<div class="collapse navbar-collapse" id="navbar">
-      <ul class="navbar-nav ml-auto">
-        
-        <li class="nav-item">
-          <a class="btn btn-outline-secondary mr-2" href="#" role="button">Iniciar sesión</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-primary mr-2" href="/root" role="button">Iniciar Sesión</a>
-        </li>
-      </ul>
-    </div>-->
   </div>
 </nav><!--END NAVBAR-->
 
@@ -29,11 +17,11 @@
   <!--ROW APP-->
   <div class="row" id="app">
   
-     <div class="col-md-7 app-map" id="map" style="height: 600px">
+     <div class="col-md-6 app-map" id="map" style="height: 600px">
          
      </div>
 
-     <div class="col-md-5 app-properties" id="properties">
+     <div class="col-md-6 app-properties" id="properties">
 
         <div>
          <form class="search_form_box" method="get">
@@ -50,16 +38,57 @@
             <input type="number" name="user_alfa" class="search_form_w" id="user_f_alfa" value="{{ user_alfa }}">
           </div>
           <div>
-            <div id="calcule" class="btn btn-default">Calcular</div>
+            <div id="calcule" class="btn btn-outline-secondary btn-small">Calcular</div>
           </div>
          </form>
         </div>
 
+        <div class="card mb-3">
+          <div class="card-header">ID: #1</div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Precio de venta:</li>
+              <li class="list-group-item">Dirección catastral</li>
+              <li class="list-group-item">Área del predio:</li>
+              <li class="list-group-item">Área construida:</li>
+              <li class="list-group-item">Altura en pisos:</li>
+              <li class="list-group-item">Uso:</li>
+            </ul>
+          </div>
+
+          <div class="card-body">
+            <div class="card-group">
+              <div class="card">
+                <div class="card-header">
+                  NORMATIVA
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  POTENCIAL DE DESARROLLO
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>          
+            </div>
+          </div>
+        </div>
+
+        <!--
         <div id="text_non_property">
           <h3>Selecciona un lote del mapa para ver información</h3>
-        </div>
-        
-        <!-- PREDIO # 1 -->
+        </div>-->
+        <!-- PREDIO -->
+        <!--
         <div class="property-box" id="property-1">
 
           <div class="property-box-head col-md-12">
@@ -96,7 +125,6 @@
               <li>Área máxima de construcción: <b id="a_m_c_1">{{ a_m_c1 }}</b> m2</li>
               <li>Area útil vendible: <b id="p_area_util_1"></b> m2</li>
               <li>Valor de ventas: <b id="p_valor_ventas_1"> </b> millones</li>
-              <!--<li>Rango de incidencia “alfa”: <b> %</b></li>-->
               <li>Valor máximo del terreno: <b id="t_valor_max_1"></b> millones</li>
               <li>Precio unitario máximo: <b id="t_valor_mc_1"></b> / m2</li>
               <br>
@@ -104,7 +132,7 @@
             </ul>
           </div>
 
-        </div>
+        </div>-->
      </div>
   </div><!--END ROW APP-->
 </div><!--END CONTAINER-->
