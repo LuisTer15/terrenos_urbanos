@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1>Crear un nuevo lote:</h1>
+			<%= form_for @lot do |f| %>
+				<div>
+					<div class="form-group">
+						<%= f.number_field :code, class: "form-control", min: "0", placeholder: "Código" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_field :location, class: "form-control", placeholder: "Coordenadas localización" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_field :address, class: "form-control", placeholder: "Dirección" %>
+					</div>
+					<div class="form-group">
+						<%= f.number_field :area_land, class: "form-control", step: "any", min: "0", placeholder: "Área terreno" %>
+					</div>
+					<div class="form-group">
+						<%= f.number_field :area_build, class: "form-control", step: "any", min: "0", placeholder: "Área construida" %>
+					</div>
+					<div class="form-group">
+						<%= f.number_field :front_dim, class: "form-control", step: "any", min: "0", placeholder: "Frente (metros)" %>
+					</div>
+					<div class="form-group">
+						<%= f.number_field :floors_build, class: "form-control", step: "any", min: "0", placeholder: "Pisos construidos" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_field :use_build, class: "form-control", placeholder: "Uso" %>
+					</div>
+
+					<div>
+						<%= f.submit "Crear lote", class: "btn btn-dark btn-block" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

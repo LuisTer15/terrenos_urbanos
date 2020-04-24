@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1>Lotes</h1>
+			<br>
+			<div>
+				<%= link_to "Crea un lote", new_lot_path, class: "btn btn-dark" %>
+			</div>
+			<br>
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>CODIGO</th>
+					<th>DIRECCIÓN</th>
+					<th>AREA TERRENO</th>
+					<th>AREA CONSTRUIDA</th>
+					<th>USO</th>
+					<th>ALTURA EN PISOS</th>
+					<th>FRENTE (metros)</th>
+				</tr>
+				<% @lots.each do |lot| %>
+					<tr>
+						<td><%= lot.id %></td>
+						<td><%= lot.code %></td>
+						<td><%= lot.address %></td>
+						<td><%= lot.area_land %></td>
+						<td><%= lot.area_build %></td>
+						<td><%= lot.use_build %></td>
+						<td><%= lot.floors_build %></td>
+						<td><%= lot.front_dim %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+

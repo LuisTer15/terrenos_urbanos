@@ -22,6 +22,10 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="alert alert-flash"><%= flash[:notice] %></div>
+    <% end %>
+
     <%= yield %>
 
     <!--BOOTSTRAP JS-->
