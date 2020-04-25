@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/lots/:id', to: 'lots#show', as: 'lot'
   get '/lots/:id/edit', to: 'lots#edit', as: 'edit_lot'
   patch '/lots/:id', to: 'lots#update'
+  delete '/lots/:id', to: 'lots#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

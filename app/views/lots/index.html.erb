@@ -9,7 +9,6 @@
 			<br>
 			<table class="table">
 				<tr>
-					<th>ID</th>
 					<th>CODIGO</th>
 					<th>DIRECCIÓN</th>
 					<th>AREA TERRENO</th>
@@ -18,11 +17,11 @@
 					<th>ALTURA EN PISOS</th>
 					<th>FRENTE (metros)</th>
 					<th></th>
+					<th></th>
 				</tr>
 				<% @lots.each do |lot| %>
 					<tr>
-						<td><%= lot.id %></td>
-						<td><%= link_to lot.code, lot %></td>
+						<td><%= lot.code %></td>
 						<td><%= link_to lot.address, lot %></td>
 						<td><%= lot.area_land %></td>
 						<td><%= lot.area_build %></td>
@@ -30,6 +29,7 @@
 						<td><%= lot.floors_build %></td>
 						<td><%= lot.front_dim %></td>
 						<td><%= link_to "Editar", edit_lot_path(lot) %></td>
+						<td><%= link_to "Eliminar", lot, method: :delete, data: { confirm: "¿Estas seguro de eliminar este producto?"} %></td>
 					</tr>
 				<% end %>
 			</table>
