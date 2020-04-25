@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  
   root 'static_pages#home'
 
   get '/app_pages/app'
 
+  resources :users, only: [:new, :create]
   resources :lots
   #get '/lots', to: 'lots#index'
   #get '/lots/new', to: 'lots#new', as: 'new_lot'
