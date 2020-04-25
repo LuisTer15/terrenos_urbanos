@@ -20,6 +20,10 @@ class LotsController < ApplicationController
 		@lot = Lot.find(params[:id])
 	end
 
+	def edit
+		@lot = Lot.find(params[:id])
+	end
+
 	private
 		def lot_params
 			params.require(:lot).permit(:code, :location, :address, :area_land, :area_build, :front_dim, :floors_build, :use_build)
