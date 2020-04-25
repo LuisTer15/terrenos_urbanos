@@ -1,4 +1,6 @@
 class LotsController < ApplicationController
+	before_action :private_access
+
 	def index
 		@lots = Lot.all
 	end
