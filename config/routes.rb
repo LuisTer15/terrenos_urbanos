@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post '/lots', to: 'lots#create'
   get '/lots/:id', to: 'lots#show', as: 'lot'
   get '/lots/:id/edit', to: 'lots#edit'
+  patch '/lots/:id', to: 'lots#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
