@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-12">
 			<h1>Lotes</h1>
@@ -7,15 +7,30 @@
 				<%= link_to "Crea un lote", new_lot_path, class: "btn btn-dark" %>
 			</div>
 			<br>
-			<table class="table">
+			<table class="table table-sm table-bordered table-striped text-center">
 				<tr>
-					<th>CODIGO</th>
+					<th>COD.</th>
 					<th>DIRECCIÓN</th>
+					<th>COORD. LOCALIZACION</th>
 					<th>AREA TERRENO</th>
 					<th>AREA CONSTRUIDA</th>
-					<th>USO</th>
+					<th>FRENTE (m)</th>
+					<th>LADO IZQUIERDO (m)</th>
+					<th>LADO DERECHO (m)</th>
+					<th>FRENTE POSTERIOR (m)</th>
 					<th>ALTURA EN PISOS</th>
-					<th>FRENTE (metros)</th>
+					<th>USO</th>
+					<th>REF. CATASTRAL</th>
+					<th>POLIGONO NORMATIVO</th>
+					<th>TRATAMIENTO</th>
+					<th>NIVEL</th>
+					<th>TIPOLOGIA</th>
+					<th>ALIN. FRONTAL</th>
+					<th>ALIN. LAT. IZQUIERDO</th>
+					<th>ALIN. LAT. DERECHO</th>
+					<th>ALIN. POSTERIOR</th>
+					<th>CLASE VIA</th>
+
 					<th></th>
 					<th></th>
 				</tr>
@@ -23,11 +38,26 @@
 					<tr>
 						<td><%= lot.code %></td>
 						<td><%= link_to lot.address, lot %></td>
+						<td><%= lot.location %></td>
 						<td><%= lot.area_land %></td>
 						<td><%= lot.area_build %></td>
-						<td><%= lot.use_build %></td>
-						<td><%= lot.floors_build %></td>
 						<td><%= lot.front_dim %></td>
+						<td><%= lot.left_dim %></td>
+						<td><%= lot.right_dim %></td>
+						<td><%= lot.back_dim %></td>
+						<td><%= lot.floors_build %></td>
+						<td><%= lot.use_build %></td>
+						<td><%= lot.ref_catastral %></td>
+						<td><%= lot.pot_polygon %></td>
+						<td><%= lot.pot_treatment %></td>
+						<td><%= lot.pot_treatment_level %></td>
+						<td><%= lot.pot_tipology %></td>
+						<td><%= lot.pot_front_align_lb_lc %></td>
+						<td><%= lot.pot_left_align_lb_lc %></td>
+						<td><%= lot.pot_right_align_lb_lc %></td>
+						<td><%= lot.pot_back_align_lb_lc %></td>
+						<td><%= lot.pot_road_name %></td>
+
 						<td><%= link_to "Editar", edit_lot_path(lot) %></td>
 						<td><%= link_to "Eliminar", lot, method: :delete, data: { confirm: "¿Estas seguro de eliminar este producto?"} %></td>
 					</tr>

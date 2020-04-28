@@ -43,6 +43,6 @@ class LotsController < ApplicationController
 
 	private
 		def lot_params
-			params.require(:lot).permit(:code, :location, :address, :area_land, :area_build, :front_dim, :floors_build, :use_build)
+			params.require(:lot).permit(:code, :location, :address, :area_land, :area_build, :front_dim, :floors_build, :use_build, :left_dim, :right_dim, :back_dim, :ref_catastral, :pot_polygon, :pot_treatment, :pot_treatment_level, :pot_tipology, :pot_front_align_lb_lc, :pot_left_align_lb_lc, :pot_right_align_lb_lc, :pot_back_align_lb_lc, :pot_road_name)
 		end
 end

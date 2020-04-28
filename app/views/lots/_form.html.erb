@@ -6,28 +6,88 @@
 			<%= form_for @lot do |f| %>
 				<div>
 					<div class="form-group">
+						<h5><strong>Código</strong></h5>
 						<%= f.number_field :code, class: "form-control", min: "0", placeholder: "Código" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Coordenadas localización</strong></h5>
 						<%= f.text_field :location, class: "form-control", placeholder: "Coordenadas localización" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Dirección</strong></h5>
 						<%= f.text_field :address, class: "form-control", placeholder: "Dirección" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Área Terreno</strong></h5>
 						<%= f.number_field :area_land, class: "form-control", step: "any", min: "0", placeholder: "Área terreno" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Área Construida</strong></h5>
 						<%= f.number_field :area_build, class: "form-control", step: "any", min: "0", placeholder: "Área construida" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Frente (metros)</strong></h5>
 						<%= f.number_field :front_dim, class: "form-control", step: "any", min: "0", placeholder: "Frente (metros)" %>
 					</div>
 					<div class="form-group">
-						<%= f.number_field :floors_build, class: "form-control", step: "any", min: "0", placeholder: "Pisos construidos" %>
+						<h5><strong>Lado Izquierdo (metros)</strong></h5>
+						<%= f.number_field :left_dim, class: "form-control", step: "any", min: "0", placeholder: "Lado izquierdo (metros)" %>
 					</div>
 					<div class="form-group">
+						<h5><strong>Lado derecho (metros)</strong></h5>
+						<%= f.number_field :right_dim, class: "form-control", step: "any", min: "0", placeholder: "Lado derecho (metros)" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Frente Posterior (metros)</strong></h5>
+						<%= f.number_field :back_dim, class: "form-control", step: "any", min: "0", placeholder: "Frente posterior (metros)" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Altura en pisos</strong></h5>
+						<%= f.number_field :floors_build, class: "form-control", step: "any", min: "0", placeholder: "Altura en pisos" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Uso</strong></h5>
 						<%= f.text_field :use_build, class: "form-control", placeholder: "Uso" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Referencia Catastral</strong></h5>
+						<%= f.text_field :ref_catastral, class: "form-control", placeholder: "Referencia catastral" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Poligono Normativo</strong></h5>
+						<%= f.select :pot_polygon, ['Sin definir','CAE-1', 'CAE-2','PC-2', 'PC-3', 'PEC-SALUD', 'PR-1B', 'PR-2', 'PR-4' ], class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Tratamiento</strong></h5>
+						<%= f.select :pot_treatment_level, ['Sin definir','Consolidación', 'Renovación','Conservación'], class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Nivel</strong></h5>
+						<%= f.select :pot_treatment, ['Sin definir','Nivel 1B', 'Nivel 2','Nivel 3', 'Patrimonial', 'Reactivación'], class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Tipologia</strong></h5>
+						<%= f.select :pot_tipology, ['Sin definir','Continua', 'Aislada'], class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Alineamiento Frontal</strong></h5>
+						<%= f.number_field :pot_front_align_lb_lc, class: "form-control", placeholder: "Alineamiento Frontal" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Alineamiento Lateral Izquierdo</strong></h5>
+						<%= f.number_field :pot_left_align_lb_lc, class: "form-control", placeholder: "Alineamiento Lateral Izquierdo" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Alineamiento Lateral Derecho</strong></h5>
+						<%= f.number_field :pot_right_align_lb_lc, class: "form-control", placeholder: "Alineamiento Lateral Derecho" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Alineamiento Posterior</strong></h5>
+						<%= f.number_field :pot_back_align_lb_lc, class: "form-control", placeholder: "Alineamiento Posterior" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Clase de Vía</strong></h5>
+						<%= f.select :pot_road_name, ['Sin definir','V6'], class: "form-control" %>
 					</div>
 
 					<div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200425171444) do
+ActiveRecord::Schema.define(version: 20200425201231) do
 
   create_table "lots", force: :cascade do |t|
     t.integer "code"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20200425171444) do
     t.string "use_build"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "left_dim"
+    t.decimal "right_dim"
+    t.decimal "back_dim"
+    t.string "ref_catastral"
+    t.string "pot_polygon"
+    t.string "pot_treatment"
+    t.string "pot_treatment_level"
+    t.string "pot_tipology"
+    t.decimal "pot_front_align_lb_lc"
+    t.decimal "pot_left_align_lb_lc"
+    t.decimal "pot_right_align_lb_lc"
+    t.decimal "pot_back_align_lb_lc"
+    t.string "pot_road_name"
   end
 
   create_table "users", force: :cascade do |t|
