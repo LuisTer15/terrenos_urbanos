@@ -3,6 +3,16 @@
 		<div class="col-12">
 			<h1> <%= form_title %></h1>
 
+			<% if @lot.errors.any? %>
+				<div class="alert alert-danger">
+					<ul>
+						<% @lot.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
 			<%= form_for @lot do |f| %>
 				<div>
 					<div class="form-group">
