@@ -1,2 +1,23 @@
 class Lot < ApplicationRecord
+	validates :code, presence: true
+	validates :location, presence: true
+	validates :address, presence: true
+	validates :area_land, presence: true
+	validates :area_build, presence: true
+	validates :front_dim, presence: true
+	validates :floors_build, presence: true
+	validates :use_build, presence: true
+	validates :left_dim, presence: true
+	validates :right_dim, presence: true
+	validates :back_dim, presence: true
+	validates :ref_catastral, presence: true
+	validates :pot_polygon, presence: true
+	validates :pot_treatment, presence: true
+	validates :pot_treatment_level, presence: true
+	validates :pot_tipology, presence: true
+	validates :pot_front_align_lb_lc, presence: true
+	validates :pot_left_align_lb_lc, presence: true
+	validates :pot_right_align_lb_lc, presence: true
+	validates :pot_back_align_lb_lc, presence: true
+	validates :pot_road_name, presence: true
 end
