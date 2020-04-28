@@ -55,19 +55,19 @@
 					</div>
 					<div class="form-group">
 						<h5><strong>Poligono Normativo</strong></h5>
-						<%= f.text_field :pot_polygon, class: "form-control", placeholder: "Poligono Normativo" %>
+						<%= f.select :pot_polygon, ['Sin definir','CAE-1', 'CAE-2','PC-2', 'PC-3', 'PEC-SALUD', 'PR-1B', 'PR-2', 'PR-4' ], class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<h5><strong>Tratamiento</strong></h5>
-						<%= f.text_field :pot_treatment, class: "form-control", placeholder: "Tratamiento" %>
+						<%= f.select :pot_treatment_level, ['Sin definir','Consolidación', 'Renovación','Conservación'], class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<h5><strong>Nivel</strong></h5>
-						<%= f.text_field :pot_treatment_level, class: "form-control", placeholder: "Nivel" %>
+						<%= f.select :pot_treatment, ['Sin definir','Nivel 1B', 'Nivel 2','Nivel 3', 'Patrimonial', 'Reactivación'], class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<h5><strong>Tipologia</strong></h5>
-						<%= f.text_field :pot_tipology, class: "form-control", placeholder: "Tipologia" %>
+						<%= f.select :pot_tipology, ['Sin definir','Continua', 'Aislada'], class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<h5><strong>Alineamiento Frontal</strong></h5>
@@ -87,7 +87,7 @@
 					</div>
 					<div class="form-group">
 						<h5><strong>Clase de Vía</strong></h5>
-						<%= f.text_field :pot_road_name, class: "form-control", placeholder: "Clase de via" %>
+						<%= f.select :pot_road_name, ['Sin definir','V6'], class: "form-control" %>
 					</div>
 
 					<div>
