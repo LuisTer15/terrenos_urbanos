@@ -57,7 +57,7 @@
 					</div>
 					<div class="form-group">
 						<h5><strong>Uso</strong></h5>
-						<%= f.text_field :use_build, class: "form-control", placeholder: "Uso" %>
+						<%= f.select :use_build, ['Sin definir','Comercial', 'Lote', 'Lote-Comercial', 'Lote-Vivienda', 'Vivienda' ], class: "form-control" %>
 					</div>
 					<div class="form-group">
 						<h5><strong>Referencia Catastral</strong></h5>
@@ -97,7 +97,7 @@
 					</div>
 					<div class="form-group">
 						<h5><strong>Clase de Vía</strong></h5>
-						<%= f.select :pot_road_name, ['Sin definir','V6'], class: "form-control" %>
+						<%= f.select :pot_road_name, ['Sin definir','V3', 'V3-V5', 'V5', 'V5-V6', 'V6', 'V6-V5' ], class: "form-control" %>
 					</div>
 
 					<div>
