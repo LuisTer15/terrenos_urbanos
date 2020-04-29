@@ -1,32 +1,33 @@
 <div class="row" hidden>
-	<table class="table table-sm table-bordered table-striped text-center">
+	<table class="table table-sm table-bordered table-striped text-center" id="table_db">
 		<% @lots.each do |lot| %>
-			<tr>
-				<td id="lot-<%= lot.code %>-code"><%= lot.code %></td>
-				<td id="lot-<%= lot.code %>-address"><%= lot.address %></td>
+			<% @i = @i + 1 %>
+				<tr>
+					<td id="lot-<%= @i %>-code"><%= lot.code %></td>
+					<td id="lot-<%= @i %>-address"><%= lot.address %></td>
 
-				<td id="lot-<%= lot.code %>-location_lat"><%= lot.location.to_f %></td>
-				<td id="lot-<%= lot.code %>-location_long"><%= lot.location.split(',').last.to_f %></td>
+					<td id="lot-<%= @i %>-location_lat"><%= lot.location.to_f %></td>
+					<td id="lot-<%= @i %>-location_long"><%= lot.location.split(',').last.to_f %></td>
 
-				<td id="lot-<%= lot.code %>"><%= lot.area_land %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.area_build %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.front_dim %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.left_dim %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.right_dim %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.back_dim %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.floors_build %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.use_build %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.ref_catastral %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_polygon %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_treatment %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_treatment_level %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_tipology %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_front_align_lb_lc %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_left_align_lb_lc %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_right_align_lb_lc %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_back_align_lb_lc %></td>
-				<td id="lot-<%= lot.code %>"><%= lot.pot_road_name %></td>
-			</tr>
+					<td id="lot-<%= @i %>"><%= lot.area_land %></td>
+					<td id="lot-<%= @i %>"><%= lot.area_build %></td>
+					<td id="lot-<%= @i %>"><%= lot.front_dim %></td>
+					<td id="lot-<%= @i %>"><%= lot.left_dim %></td>
+					<td id="lot-<%= @i %>"><%= lot.right_dim %></td>
+					<td id="lot-<%= @i %>"><%= lot.back_dim %></td>
+					<td id="lot-<%= @i %>"><%= lot.floors_build %></td>
+					<td id="lot-<%= @i %>"><%= lot.use_build %></td>
+					<td id="lot-<%= @i %>"><%= lot.ref_catastral %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_polygon %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_treatment %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_treatment_level %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_tipology %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_front_align_lb_lc %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_left_align_lb_lc %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_right_align_lb_lc %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_back_align_lb_lc %></td>
+					<td id="lot-<%= @i %>"><%= lot.pot_road_name %></td>
+				</tr>
 		<% end %>
 	</table>
 </div>

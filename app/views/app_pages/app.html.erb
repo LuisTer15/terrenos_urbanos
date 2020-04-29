@@ -177,7 +177,17 @@
             accessToken: 'pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA'
           }).addTo(mymap);
 
-    var marker = L.marker([parseFloat($( '#lot-1-location_lat').text()), parseFloat($( '#lot-1-location_long').text())]).addTo(mymap);
-    marker.bindTooltip($( '#lot-1-address').text(), {direction: 'top', permanent: true}).openTooltip();
+    var table_db_length = $("#table_db").children().children().length + 1 
+
+    // LOADS MARKER TO MAP
+    for (var i = 1; i < table_db_length; ++i) {
+       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())]).addTo(mymap);
+    };
+
+    // LOADS TOOLTIP TO MARKERS
+    for (var i = 1; i < table_db_length; ++i) {
+       this["marker"+i].bindTooltip($( '#lot-'+i+'-address').text(), {direction: 'top', permanent: true}).openTooltip();
+    };
+
   });
 </script>
