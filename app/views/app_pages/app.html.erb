@@ -150,6 +150,9 @@
         </div>-->
      </div>
   </div><!--END ROW APP-->
+
+  <%= render "lot-database" %>
+
 </div><!--END CONTAINER-->
 
 <script type="text/javascript">
@@ -174,10 +177,17 @@
             accessToken: 'pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA'
           }).addTo(mymap);
 
-    var marker = L.marker([11.009417, -74.812083]).addTo(mymap);
-    marker.bindTooltip("<b>$5.000 m</b>", {direction: 'top', permanent: true}).openTooltip();
-    
-    var marker2 = L.marker([11.010228, -74.814828]).addTo(mymap);
-    marker2.bindTooltip("<b>$7.200 m</b>", {direction: 'top', permanent: true}).openTooltip();
+    var table_db_length = $("#table_db").children().children().length + 1 
+
+    // LOADS MARKER TO MAP
+    for (var i = 1; i < table_db_length; ++i) {
+       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())]).addTo(mymap);
+    };
+
+    // LOADS TOOLTIP TO MARKERS
+    for (var i = 1; i < table_db_length; ++i) {
+       this["marker"+i].bindTooltip($( '#lot-'+i+'-address').text(), {direction: 'top', permanent: true}).openTooltip();
+    };
+
   });
 </script>
