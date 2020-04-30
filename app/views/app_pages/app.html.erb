@@ -181,12 +181,17 @@
 
     // LOADS MARKER TO MAP
     for (var i = 1; i < table_db_length; ++i) {
-       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())]).addTo(mymap);
+       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())]).on('click', showLotInfo).addTo(mymap);
     };
 
     // LOADS TOOLTIP TO MARKERS
     for (var i = 1; i < table_db_length; ++i) {
        this["marker"+i].bindTooltip($( '#lot-'+i+'-address').text(), {direction: 'top', permanent: true}).openTooltip();
+    };
+
+    // SHOWS LOTS INFO
+    function showLotInfo(lot) {
+      alert(lot.latlng['lat']);
     };
 
   });
