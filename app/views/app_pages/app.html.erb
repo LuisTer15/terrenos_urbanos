@@ -45,113 +45,16 @@
             </div>
           </div>
 
-
         <!--PROPERTY CARD-->
-        <div class="card mb-3 border-primary" id="property_card">
-          <div class="card-header font-weight-bold  bg-primary text-white h5">ID: #1 --- $5.000.000.000</div>
-          <!--DESCRIPCION & NORMATIVA-->
-          <div class="card-body">
-              <div class="card-group">
+        <%= render "lot-card" %>
+        <!--END PROPERTY CARD-->
 
-                <div class="card">
-                  <div class="card-header">
-                    DESCRIPCIÓN
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Dirección Catasttral:</li>
-                    <li class="list-group-item">Área Terreno:</li>
-                    <li class="list-group-item">Área construida:</li>
-                    <li class="list-group-item">Altura en pisos:</li>
-                    <li class="list-group-item">Uso:</li>
-                  </ul>
-                </div>      
-
-                <div class="card">
-                  <div class="card-header">
-                    NORMATIVA
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Índice máximo de ocupación:</li>
-                    <li class="list-group-item">Índice máximo de construcción:</li>
-                    <li class="list-group-item">Densidad máxima:</li>
-                    <li class="list-group-item">Altura máxima:</li>
-                    <li class="list-group-item">Tipología:</li>
-                  </ul>
-                </div>    
-              </div>
-          </div>
-          <!--POTENCIAL DE DESARROLLO-->
-          <div class="card-body">
-              <div class="card">
-                <div class="card-header">
-                  POTENCIAL DE DESARROLLO
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Área máxima de ocupación:</li>
-                  <li class="list-group-item">Área máxima de construcción:</li>
-                  <li class="list-group-item">Area útil vendible</li>
-                  <li class="list-group-item">Valor de ventas:</li>
-                  <li class="list-group-item">Valor máximo del terreno:</li>
-                  <li class="list-group-item">Precio unitario máximo:</li>
-                </ul>
-              </div>          
-          </div>
-        </div><!--END PROPERTY CARD-->
-
-        <!--
-        <div id="text_non_property">
-          <h3>Selecciona un lote del mapa para ver información</h3>
-        </div>-->
-        <!-- PREDIO -->
-        <!--
-        <div class="property-box" id="property-1">
-
-          <div class="property-box-head col-md-12">
-              <p class="property-num">1</p>
-              <h4 id="font_dir_cat">DIRECCION CATASTRAL: <b id="dir_cat_1">{{ direccion_catastral1 }}</b> 
-              <br> 
-              <p>Área del predio: <b id="area_predio_1">{{ area1 }}</b> m2     Frente: <b id="frente_predio_1">{{ frente1 }}</b> m
-              <br>
-              Área construida: <b id="area_c_predio_1">{{ area_c1 }}</b> m2     Altura en pisos: <b id="a_p_c_predio_1">{{ a_p_c1 }}</b>
-              <br>
-              Uso: <b id="uso_predio_1">{{ uso1 }}</b>
-              </p></h4>
-          </div>
-          
-          <div class="col-md-6">
-            <ul class="property-list">
-              <li><h5>NORMATIVA</h5></li>
-              <li>Índice máximo de ocupación: <b id="i_m_o_norma_1">{{ i_m_o1 }}</b></li>
-              <li>Índice máximo de construcción: <b id="i_m_c_norma_1">{{ i_m_c1 }}</b></li>
-              <li>Altura máxima permitida: <b id="a_m_p_norma_1">{{ a_m_p1 }} pisos</b></li>
-              <li>Tipología: <b id="tipologia_norma_1">{{ tipologia1 }}</b></li>
-              <li>Antejardín: <b id="antejardin_norma_1">{{ antejardin1 }}</b></li>
-              <li>Semisotano: <b id="semisotano_norma_1">{{ semisotano1 }}</b></li>
-              <li>Subdivisión: <b id="subdivision_norma_1">{{ subdivision1 }}</b>
-                               <br>Area minima: <b id="sub_area_min_norma_1">{{ sub_area_min1 }}</b><br>Frente minimo: <b id="sub_area_frente_norma_1">{{ sub_frente_min1 }}</b>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-6">
-            <ul class="property-list">
-              <li><h5>POTENCIAL DE DESARROLLO</h5></li>
-              <li>Área máxima de ocupación: <b id="a_m_o_1">{{ a_m_o1 }}</b> m2</li>
-              <li>Área máxima de construcción: <b id="a_m_c_1">{{ a_m_c1 }}</b> m2</li>
-              <li>Area útil vendible: <b id="p_area_util_1"></b> m2</li>
-              <li>Valor de ventas: <b id="p_valor_ventas_1"> </b> millones</li>
-              <li>Valor máximo del terreno: <b id="t_valor_max_1"></b> millones</li>
-              <li>Precio unitario máximo: <b id="t_valor_mc_1"></b> / m2</li>
-              <br>
-              <li>Valor del terreno: <b id="valor_terreno"></b> millones</li>
-            </ul>
-          </div>
-
-        </div>-->
      </div>
   </div><!--END ROW APP-->
 
+  <!--DATABASE TABLE-->
   <%= render "lot-database" %>
+  <!--END DATABASE TABLE-->
 
 </div><!--END CONTAINER-->
 
@@ -191,7 +94,30 @@
 
     // SHOWS LOTS INFO
     function showLotInfo(lot) {
-      alert(lot.latlng['lat']);
+      var selected_lot = lot.latlng['lat'];
+
+      for (var i = 1; selected_lot !== found_lot; ++i) {
+        var found_lot = parseFloat($( "#lot-"+i ).find( "td#lot-"+i+"-location_lat" ).text());
+        if (selected_lot == found_lot) {
+           $('div.card-header > span').text(i);
+
+           var lot_address = $( "td#lot-"+i+"-address" ).text();
+           $('li#lot-address > span').text(lot_address);
+
+           var lot_area_land = $( "td#lot-"+i+"-area_land" ).text();
+           $('li#lot-area_land > span').text(lot_area_land);
+
+           var lot_area_build = $( "td#lot-"+i+"-area_build" ).text();
+           $('li#lot-area_build > span').text(lot_area_build);
+
+           var lot_floors_build = $( "td#lot-"+i+"-floors_build" ).text();
+           $('li#lot-floors_build > span').text(lot_floors_build);
+
+           var lot_use_build = $( "td#lot-"+i+"-use_build" ).text();
+           $('li#lot-use_build > span').text(lot_use_build);
+
+        };
+      };
     };
 
   });
