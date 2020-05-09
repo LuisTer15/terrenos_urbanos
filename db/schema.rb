@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200425201231) do
+ActiveRecord::Schema.define(version: 20200509020827) do
 
   create_table "lots", force: :cascade do |t|
     t.integer "code"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20200425201231) do
     t.decimal "pot_right_align_lb_lc"
     t.decimal "pot_back_align_lb_lc"
     t.string "pot_road_name"
+    t.decimal "base_density"
+    t.integer "base_floors"
+    t.decimal "max_density"
+    t.integer "max_floors"
   end
 
   create_table "users", force: :cascade do |t|
