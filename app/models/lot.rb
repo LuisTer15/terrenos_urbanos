@@ -20,4 +20,8 @@ class Lot < ApplicationRecord
 	validates :pot_right_align_lb_lc, presence: true
 	validates :pot_back_align_lb_lc, presence: true
 	validates :pot_road_name, presence: true
+	validates :base_density, presence: true
+	validates :base_floors, presence: true
+	validates :max_density, presence: true
+	validates :max_floors, presence: true
 end

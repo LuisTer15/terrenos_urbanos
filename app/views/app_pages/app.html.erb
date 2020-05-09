@@ -18,11 +18,11 @@
   <!--ROW APP-->
   <div class="row" id="app">
   
-     <div class="col-md-6 app-map" id="map" style="height: 400px">
+     <div class="col-md-5 app-map" id="map" style="height: 400px">
          
      </div>
 
-     <div class="col-md-6 app-properties" id="properties">
+     <div class="col-md-7 app-properties" id="properties">
 
           <div class="card-group mt-3 mb-3" id="calcule_box">
             <div class="card">
@@ -101,6 +101,7 @@
         if (selected_lot == found_lot) {
            $('div.card-header > span').text(i);
 
+           // DRESCRIPTION INFO
            var lot_address = $( "td#lot-"+i+"-address" ).text();
            $('li#lot-address > span').text(lot_address);
 
@@ -115,6 +116,29 @@
 
            var lot_use_build = $( "td#lot-"+i+"-use_build" ).text();
            $('li#lot-use_build > span').text(lot_use_build);
+
+           // NORMATIVE INFO
+           var lot_pot_polygon = $( "td#lot-"+i+"-pot_polygon" ).text();
+           $('li#lot-pot_polygon > span').text(lot_pot_polygon);
+
+           var lot_pot_treatment = $( "td#lot-"+i+"-pot_treatment" ).text();
+           $('li#lot-pot_treatment > span').text(lot_pot_treatment);
+
+           var lot_pot_treatment_level = $( "td#lot-"+i+"-pot_treatment_level" ).text();
+           $('li#lot-pot_treatment_level > span').text(lot_pot_treatment_level);
+
+           var lot_base_density = $( "td#lot-"+i+"-base_density" ).text();
+           $('li#lot-density > span#lot-base_density').text(lot_base_density);
+
+           var lot_max_density = $( "td#lot-"+i+"-max_density" ).text();
+           $('li#lot-density > span#lot-max_density').text(lot_max_density);
+
+           var lot_base_floors = $( "td#lot-"+i+"-base_floors" ).text();
+           $('li#lot-floors > span#lot-base_floors').text(lot_base_floors);
+
+           var lot_max_floors = $( "td#lot-"+i+"-max_floors" ).text();
+           $('li#lot-floors > span#lot-max_floors').text(lot_max_floors);
+
 
         };
       };
