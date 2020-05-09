@@ -56,6 +56,10 @@
   <%= render "lot-database" %>
   <!--END DATABASE TABLE-->
 
+  <!--POT-ISOLATION TABLE-->
+  <%= render "pot-isolation" %>
+  <!--END POT-ISOLATION TABLE-->
+
 </div><!--END CONTAINER-->
 
 <script type="text/javascript">
@@ -164,8 +168,24 @@
            var lot_pot_back_align_lb_lc = $( "td#lot-"+i+"-pot_back_align_lb_lc" ).text();
            $('li#lot-pot_back_align_lb_lc > span').text(lot_pot_back_align_lb_lc);
 
+           // ANALYSIS INFO
+           //BASE
+           var lot_base_density_result = lot_base_density * lot_area_land;
+           $('li#lot-base_density_result > span').text(lot_base_density_result);
+
+           var lot_base_area_ocupation_result = lot_area_land - 100;
+           $('li#lot-base_area_ocupation_result > span').text(lot_base_area_ocupation_result);
+
+           var lot_base_area_build_result = lot_base_area_ocupation_result * lot_base_floors;
+           $('li#lot-base_area_build_result > span').text(lot_base_area_build_result);
+
+           //MAX
+           var lot_max_density_result = lot_max_density * lot_area_land;
+           $('li#lot-max_density_result > span').text(lot_max_density_result);
+
         };
       };
+
     };
 
   });
