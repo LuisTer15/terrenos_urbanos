@@ -1,0 +1,32 @@
+<%= render 'navbar'%>
+<!--JUMBOTRON-->
+<div class="jumbotron jumbotron-fluid text-center mb-0" id="head">
+  <div class="container">
+    <h1 class="display-4">Terrenos Urbanos<br>para proyectos inmobiliarios</h1>
+    <p class="lead">Busque, compare y gestione el mejor terreno para su proyecto inmobiliario de forma rápida y confiable</p>
+    <hr class="my-4">
+    <p class="font-weight-bold">Inicie la búsqueda seleccionando la ciudad:</p>
+    <div class=" col-12 col-md-8 ml-auto mr-auto">
+      <div class="input-group">
+        <select class="custom-select font-weight-bold" id="input_city">
+          <option selected>Barranquilla</option>
+        </select>
+        <div class="input-group-append">
+          <%= link_to "Buscar", app_pages_app_path, class: "btn btn-success font-weight-bold", role: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div><!--END JUMBOTRON-->
+<!--CONTAINER-->
+<div class="container">
+
+  <%= render 'features'%>
+
+  <%= render 'video'%> 
+
+</div><!--END CONTAINER-->
+
+<%= render 'footer'%>
+
+<%= render 'terms'%>

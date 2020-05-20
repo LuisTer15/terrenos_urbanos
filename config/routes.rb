@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+  get '/app_landing', to: 'static_pages#app_landing', as: 'app_landing'
+  get '/project', to: 'static_pages#project', as: 'project'
+
   get '/app_pages/app'
 
   get '/login', to: 'sessions#new'
