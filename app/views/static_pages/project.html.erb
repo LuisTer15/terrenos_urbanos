@@ -1,0 +1,35 @@
+<%= render 'navbar'%>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mt-4 mb-2">
+			<h5>CASA LAGUNAMAR 01-02</h5>
+			<h6>Baranoa, Atlántico</h6>
+			<a href="#project_details" class="text-reset">+ Detalles</a>
+		</div>
+
+		<div class="col-12">
+			<img src="<%= asset_path('project_1.jpg') %>" class="img-fluid mt-2 mb-2">
+			<img src="<%= asset_path('project_2.jpg') %>" class="img-fluid mt-2 mb-2">
+			<img src="<%= asset_path('project_3.jpg') %>" class="img-fluid mt-2 mb-2">
+			<img src="<%= asset_path('project_4.jpg') %>" class="img-fluid mt-2 mb-2">
+			<img src="<%= asset_path('project_5.jpg') %>" class="img-fluid mt-2 mb-2">
+		</div>
+
+		<div class="col-12 mt-4 mb-4" id="project_details">
+			<p>El proyecto propone el desarrollo de una vivienda unifamiliar para la venta con las siguientes características:</p>
+			<ul>
+				<li>Área lote: 253,33 m2</li>
+				<li>Área construida total: 288,17 m2</li>
+				<li>Altura en pisos: 2</li>
+				<li>Características piso 1: garaje doble cubierto, antejardín y terraza, baño social, zona de labores, dormitorio servicio con baño, Sala-Comedor-Cocina y patio.</li>
+				<li>Características piso 2: hall de alcobas, sala de TV, estudio, deposito/closet, dos dormitorios auxiliares con baño incluido, una habitación principal con balcón, walk in closet y baño incluido.</li>
+				<li>Características azotea: terraza descubierta.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<%= render 'footer'%>
+<%= render 'terms'%>	
