@@ -1,9 +1,40 @@
 <%= render 'navbar'%>
 
-<div class="row">
-	<div class="col-12">
-		<%= link_to "App Page", app_landing_path, class: "btn btn-success font-weight-bold", role: "button" %>
-		<%= link_to "Project Page", project_path, class: "btn btn-success font-weight-bold", role: "button" %>
+<div class="container-fluid"> 
+	<div class="row">
+		<div class="col-12">
+			<p class="lead">Terrenos Urbanos es una plataforma digital colaborativa para el desarrollo de proyectos inmobiliarios.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="card-deck">
+				<div class="card">
+					<img src="<%= asset_path('project_1.jpg') %>" class="card-img">
+					<div class="card-img-overlay">
+						<h4>Proyectos</h4>
+						<p>Busque, compare y gestione el mejor terreno para su proyecto inmobiliario de forma rápida y confiable</p>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="<%= asset_path('project_1.jpg') %>" class="card-img">
+					<div class="card-img-overlay">
+						<h4>Proyectos</h4>
+						<p>Busque, compare y gestione el mejor terreno para su proyecto inmobiliario de forma rápida y confiable</p>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="<%= asset_path('project_1.jpg') %>" class="card-img">
+					<div class="card-img-overlay">
+						<h4>Proyectos</h4>
+						<p>Busque, compare y gestione el mejor terreno para su proyecto inmobiliario de forma rápida y confiable</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
