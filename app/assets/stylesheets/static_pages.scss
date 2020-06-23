@@ -1,5 +1,9 @@
 /* HELPERS */
 
+.purple_color {
+  color: #1938d1;
+}
+
 .title {
   font-weight: 800;
   letter-spacing: 5px;
@@ -13,6 +17,8 @@
     font-size: 1.0rem;
   }
 }
+
+/* END HELPERS */
 
 /* NAVBAR */
 
@@ -46,6 +52,7 @@
   }
 }
 
+/* END NAVBAR */
 
 /* APP ROW */
 
@@ -82,66 +89,7 @@
   }
 }
 
-
-#head {
-  padding-bottom: 150px;
-  background-color: white;
-  
-  .lead {
-    margin: 0px 50px 0px 50px;
-  }
-}
-
-#input_city {
-  background-color: #ddd;
-}
-
-@media only screen and (max-width: 767px) {
-    #head {
-      padding-bottom: 70px;
-
-      h1 {
-        font-size: 2.7rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .lead {
-        margin: 0px 20px 0px 20px;
-      }
-    }
-}
-
-/* END JUMBOTRON */
-
-
-/* FEATURES */
-
-#features {
-  padding: 30px 0 30px 0;
-}
-
-.feature h3 {
-  color: black;
-}
-
-.feature p {
-  color: black;
-  font-size: 1.2rem;
-}
-
-.feature img {
-  margin-bottom: 20px;
-}
-
-/* END FEATURES */
-
-
-#video {
-  padding: 70px 0 150px 0;
-}
+/* END APP ROW */
 
 /* FOOTER */
 
@@ -174,3 +122,70 @@
 }
 
 /* END FOOTER */
+
+
+
+/* APP LANDING PAGE */
+
+/* Jumbotron */
+
+#head {
+  padding-bottom: 150px;
+  background-color: white;
+  
+  .lead {
+    margin: 0px 50px 0px 50px;
+  }
+}
+
+#input_city {
+  background-color: #ddd;
+}
+
+@media only screen and (max-width: 767px) {
+    #head {
+      padding-bottom: 70px;
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .lead {
+        margin: 0px 20px 0px 20px;
+      }
+    }
+}
+
+/* End Jumbotron */
+
+/* Features */
+
+#features {
+  padding: 30px 0 30px 0;
+}
+
+.feature h5 {
+  color: black;
+  font-size: 1rem;
+}
+
+.feature p {
+  color: black;
+  font-size: 1rem;
+}
+
+.feature img {
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+/* END FEATURES */
+
+
+#video {
+  padding: 70px 0 150px 0;
+}
