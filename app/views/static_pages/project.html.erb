@@ -1,11 +1,12 @@
 <%= render 'navbar'%>
 
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-12 mt-4 mb-2">
-			<h5>CASA LAGUNAMAR 01-02</h5>
-			<h6>Baranoa, Atlántico</h6>
-			<a href="#project_details" class="text-reset">+ Detalles</a>
+	<div class="row mx-2 my-5">
+		<div class="col-12 mt-3 mb-2 d-lg-none">
+			<h5 class="title">CASA LAGUNAMAR 01-02</h5>
+			<h6><strong>Localización:</strong> Baranoa, Atlántico</h6>
+			<h6><strong>Estatus:</strong> Pre-Construcción</h6>
+			<a href="#project_details" class="text-reset font-weight-bold">+ Detalles</a>
 		</div>
 
 		<div class="col-12 col-lg-8">
@@ -16,8 +17,12 @@
 			<img src="<%= asset_path('project_5.jpg') %>" class="img-fluid mt-2 mb-2">
 		</div>
 
-		<div class="col-12 col-lg-4 mt-4 mb-4" id="project_details">
-			<p>El proyecto propone el desarrollo de una vivienda unifamiliar para la venta con las siguientes características:</p>
+		<div class="col-12 col-lg-4 mt-2" id="project_details">
+			<h5 class="title d-none d-lg-block">CASA LAGUNAMAR 01-02</h5>
+			<h6 class="d-none d-lg-block"><strong>Localización:</strong> Baranoa, Atlántico</h6>
+			<h6 class="d-none d-lg-block"><strong>Estatus:</strong> Pre-Construcción</h6>
+
+			<p class="mt-5">El proyecto propone el desarrollo de una vivienda unifamiliar para la venta con las siguientes características:</p>
 			<ul>
 				<li>Área lote: 253,33 m2</li>
 				<li>Área construida total: 288,17 m2</li>
