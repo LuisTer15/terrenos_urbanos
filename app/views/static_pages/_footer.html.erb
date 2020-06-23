@@ -1,29 +1,24 @@
-<footer id="footer">
+<footer class="text-white" id="footer">
   <div class="container-fluid">
-    <div class="row bg_black text-white">
-      <div class="col-12 col-md-4 mt-3">
-        <img class="img-fluid float-left" width="200" src="<%= asset_path('logo_footer.png') %>">
-      </div>
-      <div class="col-12 col-md-4 mt-3">
+    <div class="row text-center" id="footer_contact">
+      <div class="col-12">
         <ul class="list-unstyled">
+          <li><p class="h4 logo_text mb-4" id="footer_logo">TERRENOS<br>URBANOS</p></li>
           <li><a href="#" class="h6 text-reset" data-toggle="modal" data-target="#modal_terms">Términos y condiciones de uso</a></li>
-          <br>
           <li><a href="#privacy" class="h6 text-reset" data-toggle="modal" data-target="#modal_terms">Política de privacidad</a></li>
-        </ul>
-      </div>
-      <div class=" col-12 col-md-4 mt-3">
-        <ul class="list-unstyled">
-          <li><h6>Contacto</h6></li>
-          <li>contacto@terrenosurbanos.co</li>
           <br>
-          <li>Barránquilla, Atlántico</li>
-          <li>COLOMBIA</li>
+          <li>contacto@terrenosurbanos.co</li>
+          <li>Barránquilla, Colombia</li>
+        </ul>
+        <ul class="list-unstyled d-inline-flex">
+          <li><a href="https://www.linkedin.com/in/lternerah/"><img src="<%= asset_path('linkedin.svg') %>" class="img-fluid m-2"></a></li>
+          <li><a href="https://www.instagram.com/luisternera/"><img src="<%= asset_path('instagram.svg') %>" class="img-fluid m-2"></a></li>
         </ul>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12 text-center align-text-bottom">
+    <div class="row" id="footer_copyright">
+      <div class="col-12 text-center align-text-bottom mt-2 mb-2">
         <p class="m-1"><small>Copyright © 2020 Terrenos Urbanos S.A.S. Todos los derechos reservados.</small></p>
       </div>
     </div>

@@ -2,13 +2,17 @@
 <nav class="navbar navbar-expand-md navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="<%= asset_path('logo.png') %>" width="200" class="img-fluid" alt="Logo">
-      <!--<p class="h4 d-inline-block text-center">Terrenos<br>Urbanos</p>-->
+      <p class="h4 d-inline-block text-center logo_text">TERRENOS URBANOS</p>
     </a>
 
     <ul class="navbar-nav ml-auto">  
       <li class="nav-item"><%= link_to "App", app_landing_path, class: "m-3 text-reset" %></li>
       <li class="nav-item"><%= link_to "Proyectos", project_path, class: "m-3 text-reset"  %></li>
+      <li class="nav-item"><%= link_to "Blog", project_path, class: "m-3 text-reset"  %></li>
+
+      <% if signed_in? %>
+        <li class="nav-item">Usuario: <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></li>
+      <% end %>
     </ul>
   </div>
 </nav><!--END NAVBAR-->

@@ -1,8 +1,59 @@
-/* JUMBOTRON */
+/* HELPERS */
+
+.title {
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    .nav-item {
+      font-weight: 500;
+    }
+}
+
+.logo_text {
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+/* LEAD */
 
 #lead_text {
-  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: #1938d1;
+  letter-spacing: 1px;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
+
+/* APP ROW */
+
+#app_row {
+  background-color: #155de9;
+  height: 600px;
+}
+
+#app_row_image {
+  background: url(asset_path("app_row_image.jpg"));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+}
+
+#app_explore_box {
+  margin: 0 auto;
+  width: 50%;
+  padding: 40px;
+  background-color: white;
+  box-shadow: -10px 12px #1938d1;
+}
+
 
 #head {
   padding-bottom: 150px;
@@ -66,8 +117,18 @@
 
 /* FOOTER */
 
-.bg_black {
-  background-color: black;
+#footer_contact {
+  background-color: #155de9;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+#footer_copyright {
+  background-color: #313131;
+}
+
+#footer_logo {
+  font-size: 23px;
 }
 
 @media only screen and (max-width: 767px) {

@@ -10,9 +10,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!--GOOGLE FONTS-->
-    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!--LEAFLET-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
@@ -37,10 +36,6 @@
   <body>
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
-    <% end %>
-
-    <% if signed_in? %>
-      <div>Usuario: <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></div>
     <% end %>
     
     <%= yield %>
