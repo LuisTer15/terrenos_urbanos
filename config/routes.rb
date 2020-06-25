@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/blog', to: 'blog#index', as: 'blog'
+
   #resources :users, only: [:new, :create]
   resources :lots
   #get '/lots', to: 'lots#index'
