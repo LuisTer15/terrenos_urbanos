@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/blog', to: 'blog#index', as: 'blog'
-
   #resources :users, only: [:new, :create]
   resources :lots
   #get '/lots', to: 'lots#index'
@@ -21,4 +19,6 @@ Rails.application.routes.draw do
   #get '/lots/:id/edit', to: 'lots#edit', as: 'edit_lot'
   #patch '/lots/:id', to: 'lots#update'
   #delete '/lots/:id', to: 'lots#destroy'
+
+  resources :blogs
 end

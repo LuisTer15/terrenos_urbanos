@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-5">
+			<br>
+			<div>
+				<%= link_to "Ver listado de entradas de blog", blogs_path, class: "btn btn-outline-secondary" %>
+			</div>
+			<br>
+			<h1><%= @blog.title %></h1>
+			<br>
+			<p><%= @blog.content %></p>
+			<br>
+			<%= link_to "Editar", edit_blog_path(@blog), class: "btn btn-primary mr-2" %></td>
+			<td><%= link_to "Eliminar", @blog, method: :delete, data: { confirm: "¿Estas seguro de eliminar esta entrada del blog?"}, class: "btn btn-outline-danger ml-2" %></td>
+		</div>
+	</div>
+</div>
