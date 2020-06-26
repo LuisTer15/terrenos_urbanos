@@ -10,9 +10,19 @@
   font-size: 20px;
 }
 
+.blog_title {
+  letter-spacing: 4px;
+  font-size: 1.8rem;
+}
+
 @media only screen and (max-width: 767px) {
   .title {
     font-weight: 800;
+    letter-spacing: 4px;
+    font-size: 1.0rem;
+  }
+
+  .blog_title {
     letter-spacing: 4px;
     font-size: 1.0rem;
   }

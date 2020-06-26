@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-5">
+			<h1>Entradas del Blog</h1>
+			<br>
+			<div>
+				<%= link_to "Crear una entrada nueva de blog", new_blog_path, class: "btn btn-outline-primary" %>
+			</div>
+			<br>
+			<table class="table table-bordered table-striped text-center">
+				<tr>
+					<th>Título del post</th>
+					<th>Contenido del post</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<% @blogs.each do |blog| %>
+					<tr>
+						<td class="font-weight-bold"><%= blog.title %></td>
+						<td><%= blog.content %></td>
+						<td><%= link_to "Ver", blog_path(blog), class: "btn btn-secondary" %></td>
+						<td><%= link_to "Editar", edit_blog_path(blog), class: "btn btn-primary" %></td>
+						<td><%= link_to "Eliminar", blog, method: :delete, data: { confirm: "¿Estas seguro de eliminar esta entrada del blog?"}, class: "btn btn-outline-danger" %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

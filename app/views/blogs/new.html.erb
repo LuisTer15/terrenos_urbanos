@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-5">
+			<h1>Crear una entrada nueva de blog</h1>
+			<br>
+			<div>
+				<%= link_to "Ver listado de entradas de blog", blogs_path, class: "btn btn-outline-secondary" %>
+			</div>
+			<br>
+			<%= form_for @blog do |f| %>
+				<div>
+					<div class="form-group">
+						<h5><strong>Titulo</strong></h5>
+						<%= f.text_field :title, class: "form-control", placeholder: "Titulo del articulo" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Contenido</strong></h5>
+						<%= f.text_field :content, class: "form-control", placeholder: "Escribe aqui tu contenido del blog..." %>
+					</div>
+					<br>
+					<div>
+						<%= f.submit 'Crear entrada de blog', class: "btn btn-primary btn-block" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

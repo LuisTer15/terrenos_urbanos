@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   #get '/lots/:id/edit', to: 'lots#edit', as: 'edit_lot'
   #patch '/lots/:id', to: 'lots#update'
   #delete '/lots/:id', to: 'lots#destroy'
+
+  resources :blogs
+  get '/blog/posts', to: 'blogs#posts', as: 'blog_posts'
 end

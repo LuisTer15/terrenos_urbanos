@@ -1,0 +1,18 @@
+<%= render 'navbar'%>
+
+<div class="container">
+	<div class="row my-5">
+		<% @blogs.each do |blog| %>
+			<div class="col-md-6 mt-4">
+				<img src="<%= asset_path('blog_row.jpg') %>" class="img-fluid my-2">
+			</div>
+			<div class="col-md-6 mt-5">
+				<h5 class="h4 font-weight-bold text-uppercase title"><%= blog.title %></h5>
+				<br class="d-none d-lg-inline-block">
+				<p><%= blog.content %></p>
+				<br class="d-none d-lg-inline-block">
+				<%= link_to "seguir leyendo >>", blog_path(blog), class: "font-weight-bolder mt-3 mb-5 text-reset" %>
+			</div>
+		<% end %>
+	</div>
+</div>
