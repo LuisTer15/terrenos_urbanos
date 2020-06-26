@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   #delete '/lots/:id', to: 'lots#destroy'
 
   resources :blogs
+  get '/blog/posts', to: 'blogs#posts', as: 'blog_posts'
 end

@@ -1,7 +1,11 @@
 class BlogsController < ApplicationController
-	before_action :private_access, except: [:show]
+	before_action :private_access, except: [:show, :posts]
 
 	def index
+		@blogs = Blog.all
+	end
+
+	def posts
 		@blogs = Blog.all
 	end
 

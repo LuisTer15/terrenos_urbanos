@@ -1,0 +1,24 @@
+<%= render 'navbar'%>
+
+<div class="container">
+	<div class="row my-5">
+		<div class="col-12">
+			<h1>Entradas del Blog</h1>
+			<br>
+			<table class="table table-bordered table-striped text-center">
+				<tr>
+					<th>Título del post</th>
+					<th>Contenido del post</th>
+					<th></th>
+				</tr>
+				<% @blogs.each do |blog| %>
+					<tr>
+						<td class="font-weight-bold"><%= blog.title %></td>
+						<td><%= blog.content %></td>
+						<td><%= link_to "Ver", blog_path(blog), class: "btn btn-secondary" %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
