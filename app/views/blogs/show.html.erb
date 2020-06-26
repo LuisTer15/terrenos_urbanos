@@ -1,17 +1,14 @@
+<%= render 'navbar'%>
+
 <div class="container">
-	<div class="row">
-		<div class="col-12 mt-5">
-			<br>
-			<div>
-				<%= link_to "Ver listado de entradas de blog", blogs_path, class: "btn btn-outline-secondary" %>
-			</div>
-			<br>
-			<h1><%= @blog.title %></h1>
-			<br>
-			<p><%= @blog.content %></p>
-			<br>
-			<%= link_to "Editar", edit_blog_path(@blog), class: "btn btn-primary mr-2" %></td>
-			<td><%= link_to "Eliminar", @blog, method: :delete, data: { confirm: "¿Estas seguro de eliminar esta entrada del blog?"}, class: "btn btn-outline-danger ml-2" %></td>
+	<div class="row my-5">
+		<div class="col-12">
+			<%= link_to "<< ver todos los articulos", blog_posts_path, class: "font-weight-bolder text-reset" %>
+		</div>
+		<div class="col-12">
+			<h2 class="font-weight-bold text-uppercase blog_title my-4"><%= @blog.title %></h2>
+			<img src="<%= asset_path('blog_row.jpg') %>" class="img-fluid my-4">
+			<p class="mt-4"><%= @blog.content %></p>
 		</div>
 	</div>
 </div>
