@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <% if signed_in? %>
-          <li class="nav-item"><%= link_to "Administar Lotes", lots_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Salir", logout_path, method: :delete, class: "btn btn-sm btn-outline-secondary" %></li>
+          <li class="nav-item"><%= link_to "Administar Lotes", lots_path, class: "m-3 text-reset" %></li>
+          <li class="nav-item"><%= link_to "Salir", logout_path, method: :delete, class: "m-3 text-reset" %></li>
         <% else %>
-          <li class="nav-item"><%= link_to "Iniciar Sesión", new_session_path, class: "nav-link" %></li> 
+          <li class="nav-item"><%= link_to "Iniciar Sesión", new_session_path, class: "m-3 text-reset" %></li> 
         <% end %>
       </ul>
     </div>
