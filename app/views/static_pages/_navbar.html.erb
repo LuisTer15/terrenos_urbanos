@@ -10,10 +10,6 @@
       <li class="nav-item"><%= link_to "App", app_landing_path, class: "m-3 text-reset" %></li>
       <li class="nav-item"><%= link_to "Proyectos", project_path, class: "m-3 text-reset"  %></li>
       <li class="nav-item"><%= link_to "Blog", blog_posts_path, class: "m-3 text-reset"  %></li>
-
-      <% if signed_in? %>
-        <li class="nav-item">Usuario: <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></li>
-      <% end %>
     </ul>
   </div>
 </nav><!--END NAVBAR-->

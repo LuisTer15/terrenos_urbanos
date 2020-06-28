@@ -1,6 +1,22 @@
 <%= render 'navbar'%>
 
-<div class="container"> 
+<div class="container">
+	<% if signed_in? %>
+		<div class="row">
+			<div class="col-12">
+				<ul class="nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
+						<div class="dropdown-menu">
+							<%= link_to "Salir", logout_path, method: :delete, class: "nav-link" %>
+						</div>
+					</li>
+					<li class="nav-item"><%= link_to "Administar Blog", blogs_path, class: "nav-link" %></li>
+					<li class="nav-item"><%= link_to "Administar Lotes", lots_path, class: "nav-link" %></li>
+				</ul>
+			</div>
+		</div>
+	<% end %>
 	<div class="row">
 		<div class="col-12">
 			<p class="lead mt-4 mb-4 text-center" id="lead_text">Somos una desarrolladora de proyectos inmobiliarios en la ciudad de Barranquilla, buscamos crear un entorno colaborativo en el sector a través de la tecnología.</p>
