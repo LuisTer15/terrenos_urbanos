@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
 
 	def update
 		@blog = Blog.find(params[:id])
-		if blog.update(blog_params)
+		if @blog.update(blog_params)
 			redirect_to blogs_path notice:"La entrada fue actualizada de blog fue creada con éxito"
 		else
 			render :edit
@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
 
 	private
 		def blog_params
-			params.require(:blog).permit(:title, :content)
+			params.require(:blog).permit(:title, :content, :description)
 		end
 
 end

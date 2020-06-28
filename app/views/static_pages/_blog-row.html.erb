@@ -8,7 +8,7 @@
 	<div class="col-md-5">
 		<h5 class="h4 font-weight-bold text-uppercase title"><%= Blog.last.title %></h5>
 		<br class="d-none d-lg-inline-block">
-		<p><%= Blog.last.content %></p>
+		<p><%= Blog.last.description %></p>
 		<br class="d-none d-lg-inline-block">
 		<%= link_to "seguir leyendo >>", blog_path(Blog.last), class: "font-weight-bolder mt-3 mb-5 text-reset" %>
 	</div>

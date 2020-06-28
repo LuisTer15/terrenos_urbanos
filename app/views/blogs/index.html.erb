@@ -10,6 +10,7 @@
 			<table class="table table-bordered table-striped text-center">
 				<tr>
 					<th>Título del post</th>
+					<th>Descripción del posts</th>
 					<th>Contenido del post</th>
 					<th></th>
 					<th></th>
@@ -18,6 +19,7 @@
 				<% @blogs.each do |blog| %>
 					<tr>
 						<td class="font-weight-bold"><%= blog.title %></td>
+						<td><%= blog.description %></td>
 						<td><%= blog.content %></td>
 						<td><%= link_to "Ver", blog_path(blog), class: "btn btn-secondary" %></td>
 						<td><%= link_to "Editar", edit_blog_path(blog), class: "btn btn-primary" %></td>

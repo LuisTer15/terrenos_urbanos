@@ -1,14 +1,21 @@
-<%= render 'navbar'%>
+<%= render 'static_pages/navbar' %>
 
 <div class="container">
-	<div class="row my-5">
-		<div class="col-12">
+	<div class="row my-5 justify-content-md-center">
+		<div class="col-md-8">
 			<%= link_to "<< ver todos los articulos", blog_posts_path, class: "font-weight-bolder text-reset" %>
 		</div>
-		<div class="col-12">
+		<div class="col-md-8">
 			<h2 class="font-weight-bold text-uppercase blog_title my-4"><%= @blog.title %></h2>
+			<p class="mt-4"><%= @blog.description %></p>
 			<img src="<%= asset_path('blog_row.jpg') %>" class="img-fluid my-4">
 			<p class="mt-4"><%= @blog.content %></p>
+
+		</div>
+		<div class="col-md-8 mt-5">
+			<%= link_to "<< ver todos los articulos", blog_posts_path, class: "font-weight-bolder text-reset" %>
 		</div>
 	</div>
 </div>
+
+<%= render 'static_pages/footer' %>
