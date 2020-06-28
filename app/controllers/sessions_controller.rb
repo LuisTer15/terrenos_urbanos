@@ -5,14 +5,11 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def user_menu
-  end
-
   def create
   	user = User.find_by(email: params[:email])
   	if user && user.authenticate(params[:password])
   		sign_in(user)
-  		redirect_to user_menu_path
+  		redirect_to root_path
   	else
   		render :new
   	end

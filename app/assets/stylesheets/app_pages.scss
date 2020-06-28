@@ -1,34 +1,29 @@
 #app_navbar {
-        background-color: white;
-        border-top: 0px;
-        border-right: 0px;
-        border-left: 0px;
-        border-bottom: 4px solid lightgray;
-        margin-bottom: 0px;
+    background-color: white;
+    border-bottom: 2px solid lightgray;
 
-    .navbar-default .navbar-nav>li>a {
-        color: unset;
-    }
-
-    .navbar-default .navbar-nav>li>a:hover {
-        color: unset;
-    }
-
-    .navbar-default .navbar-nav>li>a:focus {
-        color: unset;
-    }
-
-    .navbar-text {
-        font-size: 12px;
-        margin-top: 9px;
-        margin-bottom: 0px;
-    }
-
-    .navbar-brand {
-        padding-top: 5px;
-        padding-bottom: 0px;
+    .logo_text {
+      font-weight: 800;
+      letter-spacing: 5px;
+      font-size: 20px;
+      color: #1938d1;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    #app_navbar {
+        padding-bottom: 0px;
+        padding-top: 0px;
+
+        .logo_text {
+          font-size: 18px;
+        }
+    }
+}
+
+
+
+
 
 #btn_menu {
     padding-right: 12px;
@@ -49,7 +44,7 @@
 
 .app-properties {
     border-top: 1px solid lightgray;
-    padding-top: 60px;
+    padding-top: 68px;
     float: right;
 }
 
@@ -61,7 +56,7 @@
 .app-map {
     position: fixed;
     border: 1px solid lightgray;
-    border-top-width: 60px;
+    border-top-width: 68px;
 }
 
 #calcule_box {
