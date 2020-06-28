@@ -1,7 +1,29 @@
 #app_navbar {
     background-color: white;
     border-bottom: 2px solid lightgray;
+
+    .logo_text {
+      font-weight: 800;
+      letter-spacing: 5px;
+      font-size: 20px;
+      color: #1938d1;
+    }
 }
+
+@media only screen and (max-width: 767px) {
+    #app_navbar {
+        padding-bottom: 0px;
+        padding-top: 0px;
+
+        .logo_text {
+          font-size: 18px;
+        }
+    }
+}
+
+
+
+
 
 #btn_menu {
     padding-right: 12px;
