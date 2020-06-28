@@ -6,10 +6,9 @@ Rails.application.routes.draw do
 
   get '/app_pages/app'
 
-  get '/login', to: 'sessions#new'
+  get '/login', to: 'sessions#new', as: 'new_session'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/user_menu', to: 'sessions#user_menu', as: 'user_menu'
 
   #resources :users, only: [:new, :create]
   resources :lots

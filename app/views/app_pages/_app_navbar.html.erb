@@ -1,0 +1,21 @@
+<!--NAVBAR-->
+<nav class="navbar fixed-top navbar-expand-md navbar-light" id="app_navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <p class="h4 d-none d-lg-inline-block mt-2 text-center logo_text">TERRENOS URBANOS</p>
+      <p class="h4 d-inline-block d-lg-none mt-2 logo_text">TERRENOS<br>URBANOS</p>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <% if signed_in? %>
+          <li class="nav-item"><%= link_to "Administar Lotes", lots_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Salir", logout_path, method: :delete, class: "btn btn-sm btn-outline-secondary" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Iniciar Sesión", new_session_path, class: "nav-link" %></li> 
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav><!--END NAVBAR-->
