@@ -1,3 +1,19 @@
+.lot_icon {
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 100%;
+    background-color: #007bff;
+    border: 2px solid white;
+}
+
+.lot_icon_selected {
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 100%;
+    background-color: #6c757d;
+    border: 2px solid white;
+}
+
 /* APP NAVBAR*/
 
 #app_navbar {

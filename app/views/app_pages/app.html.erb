@@ -65,11 +65,18 @@
             accessToken: 'pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA'
           }).addTo(mymap);
 
+    var myIcon = L.divIcon({className: 'lot_icon'})
+    var myIconSelected = L.divIcon({className: 'lot_icon_selected'})
     var table_db_length = $("#table_db").children().children().length + 1 
 
     // LOADS MARKER TO MAP
     for (var i = 1; i < table_db_length; ++i) {
-       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())]).on('click', showLotInfo).addTo(mymap);
+       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())], {icon: myIcon, id: i}).on('click', showLotInfo).addTo(mymap);
+
+        this["marker"+i].on('click', function(e) {
+          e.target.setIcon(myIconSelected);
+          document.getElementById('someDiv').innerHTML = points[e.target.options.id][2];
+       }); 
     };
 
     // LOADS TOOLTIP TO MARKERS
