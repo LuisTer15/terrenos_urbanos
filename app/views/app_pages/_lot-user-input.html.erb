@@ -1,6 +1,6 @@
 <p>
   <a class="btn btn-outline-secondary btn-block text-left mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Opciones de Análisis
+    Ingresar datos de análisis
   </a>
 </p>
 <div class="collapse" id="collapseExample">
@@ -9,25 +9,25 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Área útil vendible (%):</span>
       </div>
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input type="number" min="1" max="99" class="form-control font-weight-bold" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
   </div>
 
   <div class="col-12 col-lg-6">
     <div class="input-group input-group-sm mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Precio de venta / m2:</span>
+        <span class="input-group-text" id="inputGroup-sizing-sm">Precio venta/m2 ($COP):</span>
       </div>
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input type="text" class="form-control font-weight-bold" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="formatted_number_field">
     </div>
   </div>
 
   <div class="col-12 col-lg-6">
     <div class="input-group input-group-sm mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Factor ALFA (%):</span>
+        <span class="input-group-text" id="inputGroup-sizing-sm ">Factor ALFA (%):</span>
       </div>
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input type="number" class="form-control font-weight-bold" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
   </div>
 </div>

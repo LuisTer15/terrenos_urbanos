@@ -49,9 +49,15 @@
     var h_mobile = h / 1.8;
     if (w < 768) {
       $('div#map').css("height", h_mobile);
+      $('.leaflet-control-attribution').hide()
     } else {
       $('div#map').css("height", h);
     };
+  });
+
+  $("#formatted_number_field").on('keyup', function(){
+      var formatted_number_field = parseInt($(this).val().replace(/\D/g,''),10);
+      $(this).val(formatted_number_field.toLocaleString('en-US'));
   });
 
   // THIS PART FOR THE MAP LOAD
@@ -71,17 +77,21 @@
 
     // LOADS MARKER TO MAP
     for (var i = 1; i < table_db_length; ++i) {
-       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())], {icon: myIcon, id: i}).on('click', showLotInfo).addTo(mymap);
+       this["marker"+i] = L.marker([parseFloat($( '#lot-'+i+'-location_lat').text()), parseFloat($( '#lot-'+i+'-location_long').text())], {icon: myIcon}).on('click', showLotInfo).addTo(mymap);
 
         this["marker"+i].on('click', function(e) {
           e.target.setIcon(myIconSelected);
-          document.getElementById('someDiv').innerHTML = points[e.target.options.id][2];
        }); 
     };
 
     // LOADS TOOLTIP TO MARKERS
     for (var i = 1; i < table_db_length; ++i) {
        this["marker"+i].bindTooltip($( '#lot-'+i+'-code').text(), {direction: 'top', permanent: true}).openTooltip();
+    };
+
+    // HIDES MAP´S ATTRIBUTION IN SMALLER SCREENS
+    if (w < 768) {
+      $('.leaflet-control-attribution').hide()
     };
 
     // SHOWS LOTS INFO
@@ -93,17 +103,18 @@
       for (var i = 1; selected_lot !== found_lot; ++i) {
         var found_lot = parseFloat($( "#lot-"+i ).find( "td#lot-"+i+"-location_lat" ).text());
         if (selected_lot == found_lot) {
-           $('div.card-header > span').text(i);
+           var lot_code = $( "td#lot-"+i+"-code" ).text();
+           $('div.card-header > span').text(lot_code);
 
            // DRESCRIPTION INFO
            var lot_address = $( "td#lot-"+i+"-address" ).text();
            $('li#lot-address > span').text(lot_address);
 
            var lot_area_land = $( "td#lot-"+i+"-area_land" ).text();
-           $('li#lot-area_land > span').text(lot_area_land);
+           $('li#lot-area_land > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_area_land));
 
            var lot_area_build = $( "td#lot-"+i+"-area_build" ).text();
-           $('li#lot-area_build > span').text(lot_area_build);
+           $('li#lot-area_build > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_area_build));
 
            var lot_floors_build = $( "td#lot-"+i+"-floors_build" ).text();
            $('li#lot-floors_build > span').text(lot_floors_build);
@@ -161,22 +172,20 @@
            // ANALYSIS INFO
            //BASE
            var lot_base_density_result = lot_base_density * lot_area_land;
-           $('li#lot-base_density_result > span').text(lot_base_density_result);
+           $('li#lot-base_density_result > span').text(lot_base_density_result.toFixed());
 
            var lot_base_area_ocupation_result = lot_area_land - 100;
-           $('li#lot-base_area_ocupation_result > span').text(lot_base_area_ocupation_result);
+           $('li#lot-base_area_ocupation_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_area_ocupation_result));
 
            var lot_base_area_build_result = lot_base_area_ocupation_result * lot_base_floors;
-           $('li#lot-base_area_build_result > span').text(lot_base_area_build_result);
+           $('li#lot-base_area_build_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_area_build_result));
 
            //MAX
            var lot_max_density_result = lot_max_density * lot_area_land;
-           $('li#lot-max_density_result > span').text(lot_max_density_result);
+           $('li#lot-max_density_result > span').text(lot_max_density_result.toFixed());
 
         };
       };
-
     };
-
   });
 </script>
