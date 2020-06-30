@@ -17,7 +17,7 @@
         <%= render "lot-user-input" %>
         <!--END LOT CARD-->
 
-        <h2 class="text-center" id="text_non_property">Selecciona un terreno del mapa para ver los datos</h2>
+        <h2 class="text-center m-5" id="text_non_property">Selecciona un terreno del mapa para ver los datos</h2>
 
         <!--LOT CARD-->
         <%= render "lot-card" %>
@@ -43,6 +43,7 @@
 
   // GENERAL
   $('#property_card').hide();
+  $('#lot_user_input_form').hide();
 
   // SIZES MAP HEIGHT DEPENDING ON VIEWPORT WIDTH
   $(document).ready(function(){
@@ -55,7 +56,7 @@
     };
   });
 
-  $("#formatted_number_field").on('keyup', function(){
+  $("#input_gross_sales").on('keyup', function(){
       var formatted_number_field = parseInt($(this).val().replace(/\D/g,''),10);
       $(this).val(formatted_number_field.toLocaleString('en-US'));
   });
@@ -98,6 +99,7 @@
     function showLotInfo(lot) {
       var selected_lot = lot.latlng['lat'];
       $('#property_card').show();
+      $('#lot_user_input_form').show();
       $('#text_non_property').hide();
 
       for (var i = 1; selected_lot !== found_lot; ++i) {
@@ -174,16 +176,47 @@
            var lot_base_density_result = lot_base_density * lot_area_land;
            $('li#lot-base_density_result > span').text(lot_base_density_result.toFixed());
 
-           var lot_base_area_ocupation_result = lot_area_land - 100;
+           var lot_base_area_ocupation_result = lot_area_land - 150;
            $('li#lot-base_area_ocupation_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_area_ocupation_result));
 
            var lot_base_area_build_result = lot_base_area_ocupation_result * lot_base_floors;
            $('li#lot-base_area_build_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_area_build_result));
 
+           // ANALYSIS INFO
            //MAX
            var lot_max_density_result = lot_max_density * lot_area_land;
            $('li#lot-max_density_result > span').text(lot_max_density_result.toFixed());
 
+           var lot_max_area_ocupation_result = lot_area_land - 150;
+           $('li#lot-max_area_ocupation_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_max_area_ocupation_result));
+
+           var lot_max_area_build_result = lot_max_area_ocupation_result * lot_max_floors;
+           $('li#lot-max_area_build_result > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_max_area_build_result));
+
+           // ANALYSIS INFO INPUTS
+           $("#collapseExample").on('keyup', function(){
+              //BASE
+              var input_sellable_area = $( "#input_sellable_area" ).val();
+              var lot_base_sellable_area = lot_base_area_build_result * input_sellable_area / 100;
+              $('li#lot-base_sellable_area > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_sellable_area));
+              //MAX
+              var lot_max_sellable_area = lot_max_area_build_result * input_sellable_area / 100;
+              $('li#lot-max_sellable_area > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_max_sellable_area));
+              //BASE
+              var input_gross_sales = $( "#input_gross_sales" ).val();
+              var lot_base_gross_sales = input_gross_sales.replace(/,/g, '') * lot_base_sellable_area
+              $('li#lot-base_gross_sales > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_base_gross_sales));
+              //MAX
+              var lot_max_gross_sales = input_gross_sales.replace(/,/g, '') * lot_max_sellable_area
+              $('li#lot-max_gross_sales > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_max_gross_sales));
+              //BASE
+              var input_alfa_factor = $( "#input_alfa_factor" ).val();
+              var lot_base_land_price = lot_base_gross_sales * input_alfa_factor / 100
+              $('li#lot-base_land_price > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_base_land_price));
+              //max
+              var lot_max_land_price = lot_max_gross_sales * input_alfa_factor / 100
+              $('li#lot-max_land_price > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_max_land_price));
+           });
         };
       };
     };
