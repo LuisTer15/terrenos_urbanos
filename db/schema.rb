@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200628030700) do
+ActiveRecord::Schema.define(version: 20200704214327) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20200628030700) do
     t.integer "base_floors"
     t.decimal "max_density"
     t.integer "max_floors"
+    t.integer "price", limit: 8
   end
 
   create_table "users", force: :cascade do |t|

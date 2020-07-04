@@ -10,6 +10,7 @@
 			<table class="table table-sm table-bordered table-striped text-center">
 				<tr>
 					<th>COD.</th>
+					<th>PRECIO</th>
 					<th>DIRECCIÓN</th>
 					<th>COORD. LOCALIZACION</th>
 					<th>AREA TERRENO</th>
@@ -41,6 +42,7 @@
 				<% @lots.each do |lot| %>
 					<tr>
 						<td><%= lot.code %></td>
+						<TD><%= lot.price %></TD>
 						<td><%= link_to lot.address, lot %></td>
 						<td><%= lot.location %></td>
 						<td><%= lot.area_land %></td>

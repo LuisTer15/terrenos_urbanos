@@ -4,6 +4,7 @@
 			<% @i = @i + 1 %>
 				<tr id="lot-<%= @i %>">
 					<td id="lot-<%= @i %>-code"><%= lot.code %></td>
+					<td id="lot-<%= @i %>-price"><%= lot.price %></td>
 					<td id="lot-<%= @i %>-address"><%= lot.address %></td>
 
 					<td id="lot-<%= @i %>-location_lat"><%= lot.location.to_f %></td>
