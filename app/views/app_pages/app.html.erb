@@ -106,7 +106,10 @@
         var found_lot = parseFloat($( "#lot-"+i ).find( "td#lot-"+i+"-location_lat" ).text());
         if (selected_lot == found_lot) {
            var lot_code = $( "td#lot-"+i+"-code" ).text();
-           $('div.card-header > span').text(lot_code);
+           $('div.card-header > span#lot-code').text(lot_code);
+
+           var lot_price = $( "td#lot-"+i+"-price" ).text();
+           $('div.card-header > span#lot-price').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_price));
 
            // DRESCRIPTION INFO
            var lot_address = $( "td#lot-"+i+"-address" ).text();

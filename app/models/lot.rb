@@ -1,5 +1,6 @@
 class Lot < ApplicationRecord
 	validates :code, presence: true
+	validates :price, presence: true
 	validates :location, presence: true
 	validates :address, presence: true
 	validates :area_land, presence: true
