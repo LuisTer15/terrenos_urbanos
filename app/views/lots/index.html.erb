@@ -15,6 +15,7 @@
 					<th>COORD. LOCALIZACION</th>
 					<th>AREA TERRENO</th>
 					<th>AREA CONSTRUIDA</th>
+					<th>AREA OCUPACIÓN</th>
 					<th>FRENTE (m)</th>
 					<th>LADO IZQUIERDO (m)</th>
 					<th>LADO DERECHO (m)</th>
@@ -43,10 +44,11 @@
 					<tr>
 						<td><%= lot.code %></td>
 						<TD><%= lot.price %></TD>
-						<td><%= link_to lot.address, lot %></td>
+						<td><%= link_to lot.address, edit_lot_path(lot) %></td>
 						<td><%= lot.location %></td>
 						<td><%= lot.area_land %></td>
 						<td><%= lot.area_build %></td>
+						<td><%= lot.area_occupation %></td>
 						<td><%= lot.front_dim %></td>
 						<td><%= lot.left_dim %></td>
 						<td><%= lot.right_dim %></td>
