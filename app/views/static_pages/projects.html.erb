@@ -1,0 +1,37 @@
+<%= render 'navbar'%>
+
+<div class="container-fluid">
+  <div class="row mx-md-2 my-5">
+
+    
+    <div class="col-12 col-md-6">
+      <div class="card mb-3" id="project_1">
+        <%= link_to project1_path do %>
+          <img src="<%= asset_path('project-1_1.jpg') %>" class="card-img-top">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title title">Casa Lagunamar</h5>
+          <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+        </div>
+      </div>  
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card mb-3" id="project_2">
+        <%= link_to project2_path do %>
+          <img src="<%= asset_path('project-2_1.jpg') %>" class="card-img-top">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title title">Casa Patio</h5>
+          <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+        </div>
+      </div>  
+    </div>
+
+  </div>
+</div>
+
+<%= render 'footer'%>
+<%= render 'terms'%>

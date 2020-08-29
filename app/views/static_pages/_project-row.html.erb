@@ -1,18 +1,39 @@
 <div class="row my-5">
 	<div class="col-12 my-5">
-		<%= link_to "PROYECTOS", project_path, class: "h5 my-4 title text-reset" %>
-	</div>
-	
-	<div class="col-md-4">
-		<h5> -- CASA LAGUNAMAR</h5>
-		<br class="d-none d-lg-inline-block">
-		<img src="<%= asset_path('project_row.jpg') %>" class="img-fluid mt-2 mb-2 d-lg-none">
-		<p>El proyecto propone el desarrollo de una vivienda unifamiliar para la venta localizada a 17,4km (25 min. aprox.) de la ciudad de Barranquilla en la vía la Cordialidad, atravesando la zona industrial de mayor desarrollo del departamento entre Galapa y Barranquilla. El proyecto se encuentra ubicado en la manzana 01 lote 02 dentro del Conjunto Residencial cerrado el Poblado Campestre Lagunamar.</p>
-		<br class="d-none d-lg-inline-block">
-		<%= link_to "+ información >>", project_path, class: "font-weight-bolder my-4 text-reset" %>
+		<%= link_to "PROYECTOS", projects_path, class: "h5 my-4 title text-reset" %>
 	</div>
 
-	<div class="col-md-8 d-none d-lg-inline-block">
-		<img src="<%= asset_path('project_row.jpg') %>" class="img-fluid mt-2 mb-2">
+	<div class="col-md-4">
+		<h5> 01_CASA LAGUNAMAR</h5>
+		<p>El proyecto propone el desarrollo de una vivienda unifamiliar de más de 200m2 construidos sobre un terreno de 253m2 en un conjunto residencial privado.</p>
+		<h5> 02_CASA PATIO</h5>
+		<p>El proyecto propone una vivienda multifamiliar con la renovación y extensión de una casa adicional de 100m2 en un terreno de 1500m2.</p>
+		<br class="d-none d-lg-inline-block">
+		<%= link_to "ver proyectos >>", projects_path, class: "font-weight-bolder my-4 pb-2 text-reset" %>
+	</div>
+
+	<div class="col-md-8">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		  </ol>
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		      <img src="<%= asset_path('project-1_bw.jpg') %>" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="<%= asset_path('project-2_bw.jpg') %>" class="d-block w-100" alt="...">
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
 	</div>
 </div>
