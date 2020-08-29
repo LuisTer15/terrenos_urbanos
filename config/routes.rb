@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/app_landing', to: 'static_pages#app_landing', as: 'app_landing'
-  get '/project', to: 'static_pages#project', as: 'project'
+  get '/projects', to: 'static_pages#projects', as: 'projects'
+  get '/projects/casalagunamar', to: 'static_pages#project1', as: 'project1'
+  get '/projects/casapatio', to: 'static_pages#project2', as: 'project2'
 
   get '/app_pages/app'
 

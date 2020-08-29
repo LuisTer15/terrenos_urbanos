@@ -1,0 +1,38 @@
+<%= render 'navbar'%>
+
+<div class="container-fluid">
+  <div class="row mx-md-2 my-5">
+    <div class="col-12 mt-3 mb-2 d-lg-none">
+      <h5 class="title">CASA PATIO</h5>
+      <h6><strong>Localización:</strong> Pivijay, Magdalena</h6>
+      <h6><strong>Estatus:</strong> En construcción</h6>
+      <a href="#project_details" class="text-reset font-weight-bold">+ Detalles</a>
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <img src="<%= asset_path('project-2_1.jpg') %>" class="img-fluid mt-2 mb-2">
+      <img src="<%= asset_path('project-2_2.jpg') %>" class="img-fluid mt-2 mb-2">
+    </div>
+
+    <div class="col-12 col-lg-4 mt-2" id="project_details">
+      <h5 class="title d-none d-lg-block">CASA PATIO</h5>
+      <h6 class="d-none d-lg-block"><strong>Localización:</strong> Pivijay, Magdalena</h6>
+      <h6 class="d-none d-lg-block"><strong>Estatus:</strong> En construcción</h6>
+      <h6 class="d-none d-lg-block"><strong>Arquitectura:</strong> Luis Ternera</h6>
+
+      <p class="mt-5">El proyecto propone el desarrollo de una vivienda unifamiliar para la venta con las siguientes características:</p>
+      <ul>
+        <li>Área lote: 253,33 m2</li>
+        <li>Área construida total: 288,17 m2</li>
+        <li>Altura en pisos: 2</li>
+        <li>Características piso 1: garaje doble cubierto, antejardín y terraza, baño social, zona de labores, dormitorio servicio con baño, Sala-Comedor-Cocina y patio.</li>
+        <li>Características piso 2: hall de alcobas, sala de TV, estudio, deposito/closet, dos dormitorios auxiliares con baño incluido, una habitación principal con balcón, walk in closet y baño incluido.</li>
+        <li>Características azotea: terraza descubierta.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'footer'%>
+<%= render 'terms'%>  
