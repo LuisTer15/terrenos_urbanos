@@ -82,7 +82,71 @@
 
         this["marker"+i].on('click', function(e) {
           e.target.setIcon(myIconSelected);
-       }); 
+          var input_present = $( "#input_sellable_area" ).val();
+          if (input_present.length > 0) {
+            //ERASE DATA
+            $('li#lot-base_sellable_area > span').empty();
+            //MAX
+            $('li#lot-max_sellable_area > span').empty();
+            //BASE
+            $('li#lot-base_gross_sales > span').empty();
+            //MAX
+            $('li#lot-max_gross_sales > span').empty();
+            //BASE
+            $('li#lot-base_price_weight > span').empty();
+            //MAX
+            $('li#lot-max_price_weight > span').empty();
+            //BASE
+            $('li#lot-base_land_price > span').empty();
+            //max
+            $('li#lot-max_land_price > span').empty();
+            //END ERASE DATA
+
+            var lot_price = $('div.card-header > span#lot-price').text().replace(/,/g, '');
+            var lot_area_land = $('li#lot-area_land > span').text();
+            // NORMATIVE INFO
+            var lot_base_density = $('li#lot-density > span#lot-base_density').text();
+            var lot_max_density = $('li#lot-density > span#lot-max_density').text();
+            var lot_base_floors = $('li#lot-floors > span#lot-base_floors').text();
+            var lot_max_floors = $('li#lot-floors > span#lot-max_floors').text();
+            // ANALYSIS INFO
+            var lot_area_occupation = $('li#lot-base_area_occupation > span').text();
+            //BASE
+            var lot_base_density_result = $('li#lot-base_density_result > span').text();
+            var lot_base_area_build_result = lot_area_occupation * lot_base_floors;
+            //MAX
+            var lot_max_density_result = lot_max_density * lot_area_land;
+            var lot_max_area_build_result = lot_area_occupation * lot_max_floors;
+            // ANALYSIS INFO INPUTS
+            //BASE
+            var input_sellable_area = $( "#input_sellable_area" ).val();
+            var lot_base_sellable_area = lot_base_area_build_result * input_sellable_area / 100;
+            $('li#lot-base_sellable_area > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_sellable_area));
+            //MAX
+            var lot_max_sellable_area = lot_max_area_build_result * input_sellable_area / 100;
+            $('li#lot-max_sellable_area > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_max_sellable_area));
+            //BASE
+            var input_gross_sales = $( "#input_gross_sales" ).val();
+            var lot_base_gross_sales = input_gross_sales.replace(/,/g, '') * lot_base_sellable_area
+            $('li#lot-base_gross_sales > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_base_gross_sales));
+            //MAX
+            var lot_max_gross_sales = input_gross_sales.replace(/,/g, '') * lot_max_sellable_area
+            $('li#lot-max_gross_sales > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_max_gross_sales));
+            //BASE
+            var lot_base_price_weight = lot_price * 100 / lot_base_gross_sales
+            $('li#lot-base_price_weight > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_base_price_weight));
+            //MAX
+            var lot_max_price_weight = lot_price * 100 / lot_max_gross_sales
+            $('li#lot-max_price_weight > span').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(lot_max_price_weight));
+            //BASE
+            var input_alfa_factor = $( "#input_alfa_factor" ).val();
+            var lot_base_land_price = lot_base_gross_sales * input_alfa_factor / 100
+            $('li#lot-base_land_price > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_base_land_price));
+            //max
+            var lot_max_land_price = lot_max_gross_sales * input_alfa_factor / 100
+            $('li#lot-max_land_price > span').text(new Intl.NumberFormat('en-US', {style: "currency", currency: "COP"}).format(lot_max_land_price));
+          };
+        });
     };
 
     // LOADS TOOLTIP TO MARKERS
@@ -92,7 +156,7 @@
 
     // HIDES MAP´S ATTRIBUTION IN SMALLER SCREENS
     if (w < 768) {
-      $('.leaflet-control-attribution').hide()
+      $('.leaflet-control-attribution').hide();
     };
 
     // SHOWS LOTS INFO
