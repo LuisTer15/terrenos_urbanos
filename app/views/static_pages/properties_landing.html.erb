@@ -1,0 +1,27 @@
+<%= render 'navbar'%>
+<!--JUMBOTRON-->
+<div class="jumbotron jumbotron-fluid text-center mb-0" id="head">
+  <div class="container">
+    <h1 class="display-4 purple_color">Propiedades en venta<br>en poblaciones pequeñas</h1>
+    <p class="lead">Busque, compare y gestione las mejores propiedades en el mercado dentro de pequeñas poblaciones</p>
+    <hr class="my-4">
+    <p class="font-weight-bold">Inicie la búsqueda seleccionando la ciudad:</p>
+    <div class=" col-12 col-md-8 ml-auto mr-auto">
+      <div class="input-group">
+        <div class="input-group-prepend">
+           <span class="input-group-text bg-secondary text-white">En venta</span>
+         </div>
+        <select class="custom-select font-weight-bold" id="input_city">
+          <option selected>Pivijay</option>
+        </select>
+        <div class="input-group-append">
+          <%= link_to "Buscar", properties_path, class: "btn btn-secondary font-weight-bold", role: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div><!--END JUMBOTRON-->
+
+<%= render 'footer'%>
+
+<%= render 'terms'%>

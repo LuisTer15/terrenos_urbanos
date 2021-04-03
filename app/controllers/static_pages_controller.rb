@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def project
   end
+
+  def properties_landing
+  end
 end
