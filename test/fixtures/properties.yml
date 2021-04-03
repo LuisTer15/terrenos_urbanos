@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 
+  price: 
+  location: MyText
+  address: MyText
+  area_land: 
+  area_build: 
+  room_count: 
+  bathroom_count: 
+
+two:
+  code: 
+  price: 
+  location: MyText
+  address: MyText
+  area_land: 
+  area_build: 
+  room_count: 
+  bathroom_count: 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200705043229) do
+ActiveRecord::Schema.define(version: 20210403231314) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20200705043229) do
     t.integer "max_floors"
     t.string "price", limit: 8
     t.decimal "area_occupation"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.integer "code"
+    t.integer "price"
+    t.text "location"
+    t.text "address"
+    t.integer "area_land"
+    t.integer "area_build"
+    t.integer "room_count"
+    t.integer "bathroom_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
