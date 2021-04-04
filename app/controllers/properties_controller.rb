@@ -1,6 +1,11 @@
 class PropertiesController < ApplicationController
 	before_action :private_access
 
+	def pivijay
+		@properties = Property.all
+		@i = 0
+	end
+
 	def index
 		@properties = Property.all
 	end

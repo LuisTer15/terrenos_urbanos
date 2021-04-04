@@ -1,0 +1,20 @@
+<div class="row" hidden>
+	<table class="table table-sm table-bordered table-striped text-center" id="table_db">
+		<% @properties.each do |property| %>
+			<% @i = @i + 1 %>
+				<tr id="lot-<%= @i %>">
+					<td id="lot-<%= @i %>-code"><%= property.code %></td>
+					<td id="lot-<%= @i %>-price"><%= property.price %></td>
+					<td id="lot-<%= @i %>-address"><%= property.address %></td>
+
+					<td id="lot-<%= @i %>-location_lat"><%= property.location.to_f %></td>
+					<td id="lot-<%= @i %>-location_long"><%= property.location.split(',').last.to_f %></td>
+
+					<td id="lot-<%= @i %>-area_land"><%= property.area_land %></td>
+					<td id="lot-<%= @i %>-area_build"><%= property.area_build %></td>
+					<td id="lot-<%= @i %>-area_occupation"><%= property.room_count %></td>
+					<td id="lot-<%= @i %>-front_dim"><%= property.bathroom_count %></td>
+				</tr>
+		<% end %>
+	</table>
+</div>

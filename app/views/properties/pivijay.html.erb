@@ -1,0 +1,103 @@
+<!--NAVBAR-->
+<%= render 'properties-navbar' %>
+<!--END NAVBAR-->
+
+<!--CONTAINER-->
+<div class="container-fluid">
+  <!--ROW APP-->
+  <div class="row" id="app">
+  
+     <div class="col-md-5 app-map" id="map" style="height: 400px">
+         
+     </div>
+
+     <div class="col-md-7 app-properties" id="properties">
+
+     	<div class="row mt-3">
+     		<div class="col-6">
+     			<div class="card">
+     			  <img src="<%= asset_path('project-1_1.jpg') %>" class="card-img-top" alt="...">
+     			  <div class="card-body">
+     			    <h5 class="card-title">Card title</h5>
+     			        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+     			        <p class="card-text">Some quick example text to build</p>
+     			        <a href="#" class="card-link">Card link</a>
+     			  </div>
+     			</div>
+     		</div>
+     		<div class="col-6">
+     			<div class="card">
+     			  <img src="<%= asset_path('project-1_1.jpg') %>" class="card-img-top" alt="...">
+     			  <div class="card-body">
+     			    <h5 class="card-title">Card title</h5>
+     			        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+     			        <p class="card-text">Some quick example text to build</p>
+     			        <a href="#" class="card-link">Card link</a>
+     			  </div>
+     			</div>
+     		</div>
+     		<div class="col-6">
+     			<div class="card">
+     			  <img src="<%= asset_path('project-1_1.jpg') %>" class="card-img-top" alt="...">
+     			  <div class="card-body">
+     			    <h5 class="card-title">Card title</h5>
+     			        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+     			        <p class="card-text">Some quick example text to build</p>
+     			        <a href="#" class="card-link">Card link</a>
+     			  </div>
+     			</div>
+     		</div>
+     		<div class="col-6">
+     			<div class="card">
+     			  <img src="<%= asset_path('project-1_1.jpg') %>" class="card-img-top" alt="...">
+     			  <div class="card-body">
+     			    <h5 class="card-title">Card title</h5>
+     			        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+     			        <p class="card-text">Some quick example text to build</p>
+     			        <a href="#" class="card-link">Card link</a>
+     			  </div>
+     			</div>
+     		</div>
+     	</div>
+
+     </div>
+  </div><!--END ROW APP-->
+
+  <!--DATABASE TABLE-->
+  <%= render "properties-database" %>
+  <!--END DATABASE TABLE-->
+
+
+</div><!--END CONTAINER-->
+
+<script type="text/javascript">
+  // THIS PART FOR THE SIZE OF THE WINDOW
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+  // SIZES MAP HEIGHT DEPENDING ON VIEWPORT WIDTH
+  $(document).ready(function(){
+    var h_mobile = h / 1.8;
+    if (w < 768) {
+      $('div#map').css("height", h_mobile);
+      $('.leaflet-control-attribution').hide()
+    } else {
+      $('div#map').css("height", h);
+    };
+  });
+
+  // THIS PART FOR THE MAP LOAD
+  $(document).ready(function() {
+    var mymap = L.map('map').setView([10.462825, -74.615690], 15);
+
+          L.tileLayer('https://api.mapbox.com/styles/v1/lternera/cj3yv171306ma2rprn1soczke/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'lternera.cj3yv8zhw0jap2rjxukdytcqf',
+            accessToken: 'pk.eyJ1IjoibHRlcm5lcmEiLCJhIjoiY2l6d3dsamlhMDFtdDMybHNiOWJsejB3byJ9.hMuAlbbTiS-HdnW41SwPlA'
+          }).addTo(mymap);
+
+    var myIcon = L.divIcon({className: 'lot_icon'})
+    var myIconSelected = L.divIcon({className: 'lot_icon_selected'})
+   });
+</script>

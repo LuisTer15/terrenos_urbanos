@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, only: [:new, :create]
+  #resources :users, only: [:new, :create]
   resources :properties
+  get '/propiedades/pivijay', to: 'properties#pivijay', as: 'properties_pivijay'
   #get '/properties', to: '´properties#index'
   resources :lots
   #get '/lots', to: 'lots#index'
