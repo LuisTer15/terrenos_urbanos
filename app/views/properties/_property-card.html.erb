@@ -3,7 +3,7 @@
 		<% @i = @i + 1 %>
 		<div class="col-6 mb-3">
 			<div class="card">
-			  <img src="<%= asset_path('1.jpg') %>" class="card-img-top" alt="...">
+				<%= image_tag(@i.to_s+'.jpg', class: "card-img-top", style: "height:170px;") %>
 			 	 <div class="card-body">
 			    	<h4 class="card-title" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
 			    	<h6 class="card-subtitle mb-2 text-muted" id="property-card-<%= @i %>-description"><small class="text-muted"># Dormitorios:</small> <%= property.room_count %> | <small class="text-muted"># Baños:</small> <%= property.bathroom_count %></h6>
