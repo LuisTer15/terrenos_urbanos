@@ -1,0 +1,45 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>-->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Images Column -->
+            <div class="col-7">
+              <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
+              <%= image_tag('2.jpg', class: "w-100 mt-1 mb-1") %>
+              <%= image_tag('3.jpg', class: "w-100 mt-1 mb-1") %>
+              <%= image_tag('4.jpg', class: "w-100 mt-1 mb-1") %>
+            </div><!-- END Images Column -->
+
+            <!-- Description Column -->
+            <div class="col-5">
+              <div class="card">
+                 <div class="card-body">
+                    <h4 class="card-title" >$ <span id="property-modal-<%= @i %>-price">150000000</span></h4>
+                    <h6 class="card-subtitle mb-2 text-muted" id="property-modal-<%= @i %>-description"># Dormitorios: 5 | <small class="text-muted"># Baños:</small> 5</h6>
+                    <h6 class="card-subtitle mb-2 text-muted" id="property-modal-<%= @i %>-area_build"><small class="text-muted">Área construida:</small> 300 m2</h6>
+                    <h6 class="card-subtitle mb-2 text-muted" id="property-modal-<%= @i %>-area land"><small class="text-muted">Área terreno:</small> 650 m2</h6>
+                    <p class="card-text mb-0" id="property-modal-<%= @i %>-address"><small class="text-muted">CARRERA 11 #4-04, Pivijay, Magdalena</small></p>
+                    <br>
+                    <h6 class="card-subtitle mb-2">Descripción</h6>
+                    <p class="card-text text-muted">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+
+                  </div>
+               </div>
+            </div>
+            <!-- END Description Column -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

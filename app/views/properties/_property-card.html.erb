@@ -9,12 +9,15 @@
 			    	<h6 class="card-subtitle mb-2 text-muted" id="property-card-<%= @i %>-description"><small class="text-muted"># Dormitorios:</small> <%= property.room_count %> | <small class="text-muted"># Baños:</small> <%= property.bathroom_count %></h6>
 			   	 	<h6 class="card-subtitle mb-2 text-muted" id="property-card-<%= @i %>-description"><small class="text-muted">Área construida:</small> <%= property.area_build %> m2</h6>
 			   	 	<h6 class="card-subtitle mb-2 text-muted" id="property-card-<%= @i %>-description"><small class="text-muted">Área terreno:</small> <%= property.area_land %> m2</h6>
-			    	<p class="card-text" id="property-card-<%= @i %>-address"><small class="text-muted"><%= property.address %>, Pivijay, Magdalena</small></p>
+			    	<p class="card-text mb-0" id="property-card-<%= @i %>-address"><small class="text-muted"><%= property.address %>, Pivijay, Magdalena</small></p>
 			    	<!--<a href="#" class="card-link">Ver propiedad</a>-->
 
 			    	<p hidden id="property-<%= @i %>-location_lat"><%= property.location.to_f %></p>
 					<p hidden id="property-<%= @i %>-location_long"><%= property.location.split(',').last.to_f %></p>
 			  	</div>
+			  	<div class="card-footer text-center">
+			  	      <a href="" class="card-link" data-toggle="modal" data-target="#exampleModal">Ver propiedad</a>
+			  	    </div>
 			 </div>
 		</div>	 
 	<% end %>	
