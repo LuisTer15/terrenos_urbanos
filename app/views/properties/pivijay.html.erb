@@ -59,7 +59,7 @@
 
         // LOADS MARKER TO MAP
         for (var i = 1; i < table_db_length; ++i) {
-           this["marker"+i] = L.marker([parseFloat($( '#property-'+i+'-location_lat').text()), parseFloat($( '#property-'+i+'-location_long').text())], {icon: myIcon}).addTo(mymap);
+           this["marker"+i] = L.marker([parseFloat($( '#property-'+i+'-location_lat').text()), parseFloat($( '#property-'+i+'-location_long').text())], {icon: myIcon}).on('click', showPropertyInfo).addTo(mymap);
 
            // CHANGES FORMAT OF PRICE
            var property_price = $( '#property-card-'+i+'-price' ).text();
@@ -67,8 +67,46 @@
 
             this["marker"+i].on('click', function(e) {
               e.target.setIcon(myIconSelected);
-              
             });
         };
+
+        // LOADS TOOLTIP TO MARKERS
+        for (var i = 1; i < table_db_length; ++i) {
+           this["marker"+i].bindTooltip($( '#property-'+i+'-code').text(), {direction: 'top', permanent: true}).openTooltip();
+        };
+
+        // SHOWS propertyS INFO
+        function showPropertyInfo(property) {
+          $('#propertyModal').modal('show')
+          var selected_property = property.latlng['lat'];
+
+          for (var i = 1; selected_property !== found_property; ++i) {
+            var found_property = parseFloat($( "#property-"+i ).find( "#property-"+i+"-location_lat" ).text());
+            if (selected_property == found_property) {
+
+               var property_code = $( "#property-"+i+"-code" ).text();
+               $('#property-modal-code').text(property_code);
+
+               var property_price = $( "#property-card-"+i+"-price" ).text();
+               $('#property-modal-price').text(property_price);
+
+               var property_room_count = $( "#property-card-"+i+"-room_count" ).text();
+               $('#property-modal-room_count').text(property_room_count);
+
+               var property_bathroom_count = $( "#property-card-"+i+"-bathroom_count" ).text();
+               $('#property-modal-bathroom_count').text(property_bathroom_count);
+
+               var property_area_build = $( "#property-card-"+i+"-area_build" ).text();
+               $('#property-modal-area_build').text(property_area_build);
+
+               var property_area_land = $( "#property-card-"+i+"-area_land" ).text();
+               $('#property-modal-area_land').text(property_area_land);
+
+               var property_address = $( "#property-card-"+i+"-address" ).text();
+               $('#property-modal-address').text(property_address);
+               
+            };
+          };
+        };// ENDS SHOWS propertyS INFO
    });
 </script>
