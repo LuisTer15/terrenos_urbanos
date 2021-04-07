@@ -7,13 +7,13 @@
 			 	 <div class="card-body">
 			    	<h4 class="card-title" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
 
-			    	<h6 class="card-subtitle mb-2 text-muted" ><small class="text-muted"># Dormitorios: </small><span id="property-card-<%= @i %>-room_count"><%= property.room_count %></span> | <small class="text-muted"># Baños: </small><span id="property-card-<%= @i %>-bathroom_count"><%= property.bathroom_count %></span></h6>
+			    	<h6 class="card-subtitle mb-2" ><small># Dormitorios: </small><span id="property-card-<%= @i %>-room_count"><%= property.room_count %></span> | <small># Baños: </small><span id="property-card-<%= @i %>-bathroom_count"><%= property.bathroom_count %></span></h6>
 
-			   	 	<h6 class="card-subtitle mb-2 text-muted"><small class="text-muted">Área construida: </small><span id="property-card-<%= @i %>-area_build"><%= property.area_build %></span> m2</h6>
+			   	 	<h6 class="card-subtitle mb-2"><small>Área construida: </small><span id="property-card-<%= @i %>-area_build"><%= property.area_build %></span> m2</h6>
 
-			   	 	<h6 class="card-subtitle mb-2 text-muted"><small class="text-muted">Área terreno: </small><span id="property-card-<%= @i %>-area_land"><%= property.area_land %></span> m2</h6>
+			   	 	<h6 class="card-subtitle mb-2"><small>Área terreno: </small><span id="property-card-<%= @i %>-area_land"><%= property.area_land %></span> m2</h6>
 
-			    	<p class="card-text mb-0" id="property-card-<%= @i %>-address"><small class="text-muted"><%= property.address %>, Pivijay, Magdalena</small></p>
+			    	<p class="card-text mb-0" id="property-card-<%= @i %>-address"><small><%= property.address %>, Pivijay, Magdalena</small></p>
 			    	<!--<a href="#" class="card-link">Ver propiedad</a>-->
 
 			    	<p hidden id="property-<%= @i %>-location_lat"><%= property.location.to_f %></p>
