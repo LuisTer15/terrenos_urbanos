@@ -1,9 +1,9 @@
 
 	<% @properties.each do |property| %>
 		<% @i = @i + 1 %>
-		<div class="col-6 mb-3" id="property-<%= @i %>">
+		<div class="col-12 col-md-6 mb-3" id="property-<%= @i %>">
 			<div class="card">
-				<%= image_tag(@i.to_s+'.jpg', class: "card-img-top", style: "height:170px;") %>
+				<%= image_tag('1.jpg', class: "card-img-top", style: "height:170px;") %>
 			 	 <div class="card-body">
 			    	<h4 class="card-title" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
 
