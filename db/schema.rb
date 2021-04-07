@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210403231314) do
+ActiveRecord::Schema.define(version: 20210407194150) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20210403231314) do
     t.integer "bathroom_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "property_type"
+    t.integer "stratus"
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,6 +13,8 @@
 					<th>PRECIO</th>
 					<th>DIRECCIÓN</th>
 					<th>COORD. LOCALIZACION</th>
+					<th>TIPO DE PROPIEDAD</th>
+					<th>ESTRATO</th>
 					<th>AREA TERRENO</th>
 					<th>AREA CONSTRUIDA</th>
 					<th># DORMITORIOS</th>
@@ -27,6 +29,8 @@
 						<TD><%= property.price %></TD>
 						<td><%= link_to property.address, edit_property_path(property) %></td>
 						<td><%= property.location %></td>
+						<td><%= property.property_type %></td>
+						<td><%= property.stratus %></td>
 						<td><%= property.area_land %></td>
 						<td><%= property.area_build %></td>
 						<td><%= property.room_count %></td>

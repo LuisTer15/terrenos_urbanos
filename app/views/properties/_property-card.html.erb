@@ -3,9 +3,11 @@
 		<% @i = @i + 1 %>
 		<div class="col-12 col-md-6 mb-3" id="property-<%= @i %>">
 			<div class="card">
-				<%= image_tag('1.jpg', class: "card-img-top", style: "height:170px;") %>
-			 	 <div class="card-body">
-			    	<h4 class="card-title" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
+				<%= image_tag('1.jpg', class: "card-img-top mb-0", style: "height:180px;") %>
+			 	<div class="card-body">
+			 		<span class="badge badge-warning p-1 mr-0 ml-0" id="property-<%= @i %>-property_type"><%= property.property_type %> en venta</span>
+			 		<span class="badge badge-secondary p-1 ml-0" id="property-<%= @i %>-code">COD: <%= property.code %></span>
+			    	<h4 class="card-title mt-1" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
 
 			    	<h6 class="card-subtitle mb-2" ><small># Dormitorios: </small><span id="property-card-<%= @i %>-room_count"><%= property.room_count %></span> | <small># Baños: </small><span id="property-card-<%= @i %>-bathroom_count"><%= property.bathroom_count %></span></h6>
 
@@ -21,7 +23,7 @@
 					<p hidden id="property-<%= @i %>-code"><%= property.code %></p>
 			  	</div>
 			  	<div class="card-footer text-center p-0">
-			  		<p class="btn btn-light btn-block m-0" id="see-property-<%= @i %>-btn">Ver propiedad</p>
+			  		<button class="btn btn-light btn-block m-0" id="see-property-<%= @i %>-btn"><small>Ver propiedad</small></button>
 			  	 </div>
 			 </div>
 		</div>	 

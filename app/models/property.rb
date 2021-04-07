@@ -5,4 +5,5 @@ class Property < ApplicationRecord
 	validates :address, presence: true
 	validates :area_land, presence: true
 	validates :area_build, presence: true
+	validates :property_type, presence: true
 end
