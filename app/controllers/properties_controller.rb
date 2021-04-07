@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-	before_action :private_access
+	before_action :private_access, except: [:pivijay]
 
 	def pivijay
 		@properties = Property.all
