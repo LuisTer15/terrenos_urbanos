@@ -1,0 +1,30 @@
+
+	<% @properties.each do |property| %>
+		<% @i = @i + 1 %>
+		<div class="col-6 mb-3" id="property-<%= @i %>">
+			<div class="card">
+				<%= image_tag(@i.to_s+'.jpg', class: "card-img-top", style: "height:170px;") %>
+			 	 <div class="card-body">
+			    	<h4 class="card-title" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
+
+			    	<h6 class="card-subtitle mb-2 text-muted" ><small class="text-muted"># Dormitorios: </small><span id="property-card-<%= @i %>-room_count"><%= property.room_count %></span> | <small class="text-muted"># Baños: </small><span id="property-card-<%= @i %>-bathroom_count"><%= property.bathroom_count %></span></h6>
+
+			   	 	<h6 class="card-subtitle mb-2 text-muted"><small class="text-muted">Área construida: </small><span id="property-card-<%= @i %>-area_build"><%= property.area_build %></span> m2</h6>
+
+			   	 	<h6 class="card-subtitle mb-2 text-muted"><small class="text-muted">Área terreno: </small><span id="property-card-<%= @i %>-area_land"><%= property.area_land %></span> m2</h6>
+
+			    	<p class="card-text mb-0" id="property-card-<%= @i %>-address"><small class="text-muted"><%= property.address %>, Pivijay, Magdalena</small></p>
+			    	<!--<a href="#" class="card-link">Ver propiedad</a>-->
+
+			    	<p hidden id="property-<%= @i %>-location_lat"><%= property.location.to_f %></p>
+					<p hidden id="property-<%= @i %>-location_long"><%= property.location.split(',').last.to_f %></p>
+					<p hidden id="property-<%= @i %>-code"><%= property.code %></p>
+			  	</div>
+			  	<div class="card-footer text-center p-0">
+			  		<p class="btn btn-light btn-block m-0" id="see-property-<%= @i %>-btn">Ver propiedad</p>
+			  	 </div>
+			 </div>
+		</div>	 
+	<% end %>	
+
+	

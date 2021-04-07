@@ -1,0 +1,43 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<h1>Propiedades</h1>
+			<br>
+			<div>
+				<%= link_to "Crea una propiedad", new_property_path, class: "btn btn-dark" %>
+			</div>
+			<br>
+			<table class="table table-sm table-bordered table-striped text-center">
+				<tr>
+					<th>COD.</th>
+					<th>PRECIO</th>
+					<th>DIRECCIÓN</th>
+					<th>COORD. LOCALIZACION</th>
+					<th>AREA TERRENO</th>
+					<th>AREA CONSTRUIDA</th>
+					<th># DORMITORIOS</th>
+					<th># BAÑOS</th>
+					
+					<th></th>
+					<th></th>
+				</tr>
+				<% @properties.each do |property| %>
+					<tr>
+						<td><%= property.code %></td>
+						<TD><%= property.price %></TD>
+						<td><%= link_to property.address, edit_property_path(property) %></td>
+						<td><%= property.location %></td>
+						<td><%= property.area_land %></td>
+						<td><%= property.area_build %></td>
+						<td><%= property.room_count %></td>
+						<td><%= property.bathroom_count %></td>
+
+						<td><%= link_to "Editar", edit_property_path(property) %></td>
+						<td><%= link_to "Eliminar", property, method: :delete, data: { confirm: "¿Estas seguro de eliminar esta propiedad?"} %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1> <%= form_title %></h1>
+
+			<% if @property.errors.any? %>
+				<div class="alert alert-danger">
+					<ul>
+						<% @property.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<%= form_for @property do |f| %>
+				<div>
+					<div class="form-group">
+						<h5><strong>Código</strong></h5>
+						<%= f.number_field :code, class: "form-control", min: "0", placeholder: "Código" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Precio</strong></h5>
+						<%= f.number_field :price, class: "form-control", min: "0", placeholder: "Precio" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Coordenadas localización</strong></h5>
+						<%= f.text_field :location, class: "form-control", placeholder: "Coordenadas localización" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Dirección</strong></h5>
+						<%= f.text_field :address, class: "form-control", placeholder: "Dirección" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Área Terreno</strong></h5>
+						<%= f.number_field :area_land, class: "form-control", step: "any", min: "0", placeholder: "Área terreno" %>
+					</div>
+					<div class="form-group">
+						<h5><strong>Área Construida</strong></h5>
+						<%= f.number_field :area_build, class: "form-control", step: "any", min: "0", placeholder: "Área construida" %>
+					</div>
+					<div class="form-group">
+						<h5><strong># Dormitorios</strong></h5>
+						<%= f.number_field :room_count, class: "form-control", step: "any", min: "0", placeholder: "# Dormitorios" %>
+					</div>
+					<div class="form-group">
+						<h5><strong># Baños</strong></h5>
+						<%= f.number_field :bathroom_count, class: "form-control", step: "any", min: "0", placeholder: "# Baños" %>
+
+					<div>
+						<%= f.submit form_title, class: "btn btn-dark btn-block" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
