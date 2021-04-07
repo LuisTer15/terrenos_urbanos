@@ -77,7 +77,7 @@
 
         // SHOWS propertyS INFO
         function showPropertyInfo(property) {
-          $('#propertyModal').modal('show')
+          $('#propertyModal').modal('show');
           var selected_property = property.latlng['lat'];
 
           for (var i = 1; selected_property !== found_property; ++i) {
@@ -107,6 +107,33 @@
                
             };
           };
-        };// ENDS SHOWS propertyS INFO
+        };// ENDS SHOWS propertys INFO
+
+        $(".btn-light").click(function() {
+          $('#propertyModal').modal('show');
+          var property_id = $(this).attr("id");
+          var i = property_id.match(/\d+/);
+          
+          var property_code = $( "#property-"+i+"-code" ).text();
+          $('#property-modal-code').text(property_code);
+
+          var property_price = $( "#property-card-"+i+"-price" ).text();
+          $('#property-modal-price').text(property_price);
+
+          var property_room_count = $( "#property-card-"+i+"-room_count" ).text();
+          $('#property-modal-room_count').text(property_room_count);
+
+          var property_bathroom_count = $( "#property-card-"+i+"-bathroom_count" ).text();
+          $('#property-modal-bathroom_count').text(property_bathroom_count);
+
+          var property_area_build = $( "#property-card-"+i+"-area_build" ).text();
+          $('#property-modal-area_build').text(property_area_build);
+
+          var property_area_land = $( "#property-card-"+i+"-area_land" ).text();
+          $('#property-modal-area_land').text(property_area_land);
+
+          var property_address = $( "#property-card-"+i+"-address" ).text();
+          $('#property-modal-address').text(property_address);
+        });
    });
 </script>

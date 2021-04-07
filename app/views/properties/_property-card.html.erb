@@ -20,9 +20,9 @@
 					<p hidden id="property-<%= @i %>-location_long"><%= property.location.split(',').last.to_f %></p>
 					<p hidden id="property-<%= @i %>-code"><%= property.code %></p>
 			  	</div>
-			  	<div class="card-footer text-center">
-			  	      <a href="" class="card-link" data-toggle="modal" data-target="#exampleModal">Ver propiedad</a>
-			  	    </div>
+			  	<div class="card-footer text-center p-0">
+			  		<p class="btn btn-light btn-block m-0" id="see-property-<%= @i %>-btn">Ver propiedad</p>
+			  	 </div>
 			 </div>
 		</div>	 
 	<% end %>	
