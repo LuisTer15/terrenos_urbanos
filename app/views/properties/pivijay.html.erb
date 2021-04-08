@@ -107,7 +107,13 @@
 
                var property_address = $( "#property-card-"+i+"-address" ).text();
                $('#property-modal-address').text(property_address);
-               
+
+               var property_description = $("#property-"+i+"-description").text();
+               if (property_description.length > 0) {
+                  $("#property-modal-description").text(property_description);
+                } else {
+                  $("#property-modal-description").text(property_property_type);
+               };
             };
           };
         };// ENDS SHOWS propertys INFO
@@ -140,6 +146,13 @@
 
           var property_address = $( "#property-card-"+i+"-address" ).text();
           $('#property-modal-address').text(property_address);
+
+          var property_description = $("#property-"+i+"-description").text();
+          if (property_description.length > 0) {
+             $("#property-modal-description").text(property_description);
+           } else {
+             $("#property-modal-description").text(property_property_type);
+          };
         });
    });
 </script>

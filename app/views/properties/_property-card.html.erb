@@ -21,6 +21,7 @@
 			    	<p hidden id="property-<%= @i %>-location_lat"><%= property.location.to_f %></p>
 					<p hidden id="property-<%= @i %>-location_long"><%= property.location.split(',').last.to_f %></p>
 					<p hidden id="property-<%= @i %>-code"><%= property.code %></p>
+					<p hidden id="property-<%= @i %>-description"><%= property.description %></p>
 			  	</div>
 			  	<div class="card-footer text-center p-0">
 			  		<button class="btn btn-light btn-block m-0" id="see-property-<%= @i %>-btn"><small>Ver propiedad</small></button>
