@@ -4,7 +4,10 @@
 			<h1>Entradas del Blog</h1>
 			<br>
 			<div>
-				<%= link_to "Crear una entrada nueva de blog", new_blog_path, class: "btn btn-outline-primary" %>
+				<%= link_to "Crear una entrada nueva de blog", new_blog_path, class: "btn btn-primary m-2" %>
+				<%=  %>
+				<%= link_to "Home Blog", blog_posts_path, class: "btn btn-outline-secondary m-2" %>
+				<%= link_to "Home", root_path, class: "btn btn-outline-secondary m-2" %>
 			</div>
 			<br>
 			<table class="table table-bordered table-striped text-center">

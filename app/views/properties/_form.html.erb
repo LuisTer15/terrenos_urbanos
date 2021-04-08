@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h1> <%= form_title %></h1>
+			<h1> <%= form_title_properties %></h1>
 
 			<% if @property.errors.any? %>
 				<div class="alert alert-danger">
@@ -13,6 +13,7 @@
 				</div>
 			<% end %>
 
+			<form>
 			<%= form_for @property do |f| %>
 				<div>
 					<div class="form-group">
@@ -60,10 +61,11 @@
 						<%= f.text_field :description, class: "form-control", placeholder: "Agrega una descripción de la propiedad" %>
 					</div>
 					<div>
-						<%= f.submit form_title, class: "btn btn-dark btn-block" %>
+						<%= f.submit form_title_properties, class: "btn btn-dark btn-block" %>
 					</div>
 				</div>
 			<% end %>
+			</form>
 		</div>
 	</div>
 </div>
