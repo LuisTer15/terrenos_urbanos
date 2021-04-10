@@ -1,0 +1,31 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<h1>CONTACTO DE LEAD</h1>
+			<br>
+			<div>
+				<%= link_to "Home Propiedades", properties_pivijay_path, class: "btn btn-outline-secondary m-2" %>
+				<%= link_to "Home", root_path, class: "btn btn-outline-secondary m-2" %>
+			</div>
+			<br>
+			<table class="table table-sm table-bordered table-striped text-center">
+				<tr>
+					<th>COD. PROPIEDAD</th>
+					<th>NOMBRE</th>
+					<th>E-MAIL</th>
+					<th># DE TELEFONO</th>
+					<th>DESCRIPCION</th>
+				</tr>
+				<% @leads.each do |lead| %>
+					<tr>
+						<td><%= lead.property_code_lead %></td>
+						<TD><%= lead.name_lead %></TD>
+						<td><%= lead.email_lead %></td>
+						<td><%= lead.phonenumber_lead %></td>
+						<td><%= lead.message_lead %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

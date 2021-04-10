@@ -72,7 +72,7 @@
                <div class="card mt-3">
                   <div class="card-body">
                     <h6 class="card-title text-muted">Contacta al anunciante:</h5>
-                    <form>
+                    <div>
                       <%= form_for @lead do |f| %>
                          <div class="form-group">
                            <%= f.text_field :property_code_lead, class: "form-control", id: "property-modal-code-lead", readonly: true %>
@@ -93,7 +93,7 @@
                            <%= f.submit 'Enviar formulario', class: "btn btn-primary btn-block" %>
                          </div>
                       <% end %>
-                      </form>
+                      </div>
                   </div>
                </div>
             </div>
