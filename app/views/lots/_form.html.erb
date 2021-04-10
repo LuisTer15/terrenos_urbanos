@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h1> <%= form_title %></h1>
+			<h1> <%= form_title_lots %></h1>
 
 			<% if @lot.errors.any? %>
 				<div class="alert alert-danger">
@@ -125,7 +125,7 @@
 					</div>
 
 					<div>
-						<%= f.submit form_title, class: "btn btn-dark btn-block" %>
+						<%= f.submit form_title_lots, class: "btn btn-dark btn-block" %>
 					</div>
 				</div>
 			<% end %>

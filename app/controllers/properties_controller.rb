@@ -1,10 +1,5 @@
 class PropertiesController < ApplicationController
-	before_action :private_access, except: [:pivijay]
-
-	def pivijay
-		@properties = Property.all
-		@i = 0
-	end
+	before_action :private_access
 
 	def index
 		@properties = Property.all
@@ -48,6 +43,6 @@ class PropertiesController < ApplicationController
 
 	private
 		def property_params
-			params.require(:property).permit(:code, :price, :location, :address, :area_land, :area_build, :room_count, :bathroom_count, :property_type, :stratus)
+			params.require(:property).permit(:code, :price, :location, :address, :area_land, :area_build, :room_count, :bathroom_count, :property_type, :stratus, :description)
 		end
 end

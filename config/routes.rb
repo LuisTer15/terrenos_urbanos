@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   #resources :users, only: [:new, :create]
+  resources :leads, except: [:new]
+  get '/propiedades/pivijay', to: 'leads#new', as: 'properties_pivijay'
   resources :properties
-  get '/propiedades/pivijay', to: 'properties#pivijay', as: 'properties_pivijay'
-  #get '/properties', to: '´properties#index'
   resources :lots
   #get '/lots', to: 'lots#index'
   #get '/lots/new', to: 'lots#new', as: 'new_lot'

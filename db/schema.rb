@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210407194150) do
+ActiveRecord::Schema.define(version: 20210408192542) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20210407194150) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+  end
+
+  create_table "leads", force: :cascade do |t|
+    t.string "name_lead"
+    t.string "email_lead"
+    t.string "phonenumber_lead"
+    t.text "message_lead"
+    t.string "property_code_lead"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lots", force: :cascade do |t|
@@ -65,6 +75,7 @@ ActiveRecord::Schema.define(version: 20210407194150) do
     t.datetime "updated_at", null: false
     t.string "property_type"
     t.integer "stratus"
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
