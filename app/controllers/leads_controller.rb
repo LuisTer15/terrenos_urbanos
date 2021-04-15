@@ -14,9 +14,9 @@ class LeadsController < ApplicationController
 	def create
 		@lead = Lead.new(lead_params)
 		if @lead.save
-			redirect_to properties_pivijay_path, notice: "La información fue enviada con éxito, pronto nos contactaremos"
+			redirect_to properties_pivijay_path, alert: "La información fue enviada con éxito, pronto nos contactaremos"
 		else
-			redirect_to root_path, notice: "No funciona el leads model"
+			redirect_to root_path, properties_pivijay_path, alert: "Ocurrió un error, por favor envia nuevamente el formulario"
 		end
 	end
 
