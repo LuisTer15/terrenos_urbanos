@@ -47,12 +47,12 @@
 /* LEAD */
 
 #lead_text {
+  color: white;
   font-weight: 600;
   font-size: 1.9rem;
-  color: #1938d1;
   letter-spacing: 1px;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -80,8 +80,8 @@
 
 #app_explore_box {
   margin: 0 auto;
-  width: 50%;
-  padding: 40px;
+  width: 80%;
+  padding: 20px;
   background-color: white;
   box-shadow: -10px 12px #1938d1;
 }
