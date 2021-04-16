@@ -9,8 +9,7 @@
 			<h2 class="font-weight-bold text-uppercase blog_title my-4"><%= @blog.title %></h2>
 			<p class="mt-4"><%= @blog.description %></p>
 			<img src="<%= asset_path('blog-1.jpg') %>" class="img-fluid my-4">
-			<p class="mt-4"><%= @blog.content %></p>
-
+			<div class="mt-4 text-justify"><%= @blog.content.html_safe %></div>
 		</div>
 		<div class="col-md-8 mt-5">
 			<%= link_to "<< ver todos los articulos", blog_posts_path, class: "font-weight-bolder text-reset" %>
