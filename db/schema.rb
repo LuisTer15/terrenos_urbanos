@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210415223335) do
+ActiveRecord::Schema.define(version: 20210417185438) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -18,14 +18,7 @@ ActiveRecord::Schema.define(version: 20210415223335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.string "state", default: "draft"
-    t.string "content_url"
     t.string "image_path"
-    t.string "publisher"
-    t.datetime "published_at"
-    t.index ["published_at"], name: "blog_published_at_idx"
-    t.index ["state"], name: "blog_state_idx"
-    t.index ["title"], name: "blog_title_idx"
   end
 
   create_table "leads", force: :cascade do |t|
