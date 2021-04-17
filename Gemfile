@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'popper_js', '~> 1.14.5'
 gem 'coffee-script-source', '1.8.0'
+gem 'social-share-button'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
