@@ -11,10 +11,26 @@
 			<img src="<%= asset_path('blog-1.jpg') %>" class="img-fluid my-4">
 			<div class="mt-4 text-justify"><%= @blog.content.html_safe %></div>
 		</div>
+		<br>
 		<div class="col-md-8 mt-5">
-			<%= link_to "<< ver todos los articulos", blog_posts_path, class: "font-weight-bolder text-reset" %>
+			<div id="disqus_thread"></div>
 		</div>
 	</div>
 </div>
 
 <%= render 'static_pages/footer' %>
+
+<script>
+    var disqus_config = function () {
+    this.page.url = "<%= request.original_url %>";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = "<%= @blog.id %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://terrenosurbanos.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
