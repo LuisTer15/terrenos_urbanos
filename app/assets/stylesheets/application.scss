@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "static_pages";
 @import "app_pages";
+@import "social-share-button";
 
  * {
      -webkit-box-sizing: border-box;
@@ -11,4 +12,14 @@
 
  body {
     font-family: 'Montserrat', sans-serif;
+}
+
+$size: 30px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }
