@@ -16,5 +16,6 @@
 
 //= require jquery
 //= require popper
+//= require social-share-button
 //= require bootstrap
 //= require jquery_ujs
