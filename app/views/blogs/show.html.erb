@@ -9,7 +9,7 @@
 			<h2 class="font-weight-bold text-uppercase blog_title my-4"><%= @blog.title %></h2>
 			<%= social_share_button_tag(@blog.title) %>
 			<p class="mt-4 font-italic"><%= @blog.description %></p>
-			<img src="<%= asset_path('blog-1.jpg') %>" class="img-fluid my-4">
+			<img src="<%= @blog.image_path %>" class="img-fluid my-4">
 			<div class="mt-4 text-justify"><%= @blog.content.html_safe %></div>
 		</div>
 		<br>

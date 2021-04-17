@@ -3,7 +3,7 @@
 		<%= link_to "BLOG", blog_posts_path, class: "h5 my-4 title text-reset" %>
 	</div>
 	<div class="col-md-7">
-		<img src="<%= asset_path('blog-1.jpg') %>" class="img-fluid my-2">
+		<img src="<%= Blog.last.image_path %>" class="img-fluid my-2">
 	</div>
 	<div class="col-md-5">
 		<h5 class="h4 font-weight-bold text-uppercase title"><%= Blog.last.title %></h5>
