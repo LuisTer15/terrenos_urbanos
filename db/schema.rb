@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210417185438) do
+ActiveRecord::Schema.define(version: 20210423012330) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20210417185438) do
     t.string "property_type"
     t.integer "stratus"
     t.string "description"
+    t.string "property_status"
+    t.boolean "active", default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|
