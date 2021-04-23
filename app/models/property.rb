@@ -6,5 +6,4 @@ class Property < ApplicationRecord
 	validates :area_land, presence: true
 	validates :area_build, presence: true
 	validates :property_type, presence: true
-	validates :property_status, presence: true
 end
