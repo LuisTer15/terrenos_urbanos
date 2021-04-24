@@ -72,7 +72,7 @@
 
         // LOADS TOOLTIP TO MARKERS
         for (var i = 1; i < table_db_length; ++i) {
-           this["marker"+i].bindTooltip($( '#property-'+i+'-code').text(), {direction: 'top', permanent: true}).openTooltip();
+           this["marker"+i].bindTooltip($( '#property-'+i+'-code').text(), {direction: 'top'});
         };
 
         // SHOWS propertyS INFO
@@ -90,6 +90,9 @@
 
                var property_property_type = $( "#property-"+i+"-property_type" ).text();
                $('#property-modal-property_type').text(property_property_type);
+
+               var property_property_status = $( "#property-"+i+"-property_status" ).text();
+               $('#property-modal-property_status').text(property_property_status);
 
                var property_price = $( "#property-card-"+i+"-price" ).text();
                $('#property-modal-price').text(property_price);
@@ -130,6 +133,10 @@
 
           var property_property_type = $( "#property-"+i+"-property_type" ).text();
           $('#property-modal-property_type').text(property_property_type);
+
+          var property_property_status = $( "#property-"+i+"-property_status" ).text();
+          $('#property-modal-property_status').text(property_property_status);
+
 
           var property_price = $( "#property-card-"+i+"-price" ).text();
           $('#property-modal-price').text(property_price);
