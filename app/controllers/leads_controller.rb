@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
 	end
 
 	def new
-		@properties = Property.all
+		@properties = Property.where(active: true)
 		@i = 0
 		@lead = Lead.new
 	end
