@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 
 	def create
 		@property = Property.new(property_params)
+		@property.images.attach(params[:images])
 		if @property.save
 			redirect_to properties_path, notice: "La propiedad fue creada con éxito"
 		else
@@ -47,6 +48,6 @@ class PropertiesController < ApplicationController
 											:area_land, :area_build, :room_count, 
 											:bathroom_count, :property_type, 
 											:stratus, :description, :property_status,
-											:active)
+											:active, images: [] )
 		end
 end

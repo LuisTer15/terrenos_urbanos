@@ -14,11 +14,8 @@
         <div class="container-fluid">
           <div class="row">
             <!-- Images Column for md and up-->
-            <div class="col-7 d-none d-lg-inline">
-              <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-              <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-              <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-              <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
+            <div class="col-7 d-none d-lg-inline" id="property-modal-images-md">
+              
             </div><!-- END Images Column for md and up -->
 
             <!-- Images Column for sm-->
@@ -29,16 +26,8 @@
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag('1.jpg', class: "w-100 mt-1 mb-1") %>
-                  </div>
+                <div class="carousel-inner" id="property-modal-images-sm">
+                  
                 </div>
                 <a class="carousel-control-prev" href="#propertyCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

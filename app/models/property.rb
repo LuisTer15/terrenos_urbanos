@@ -1,4 +1,6 @@
 class Property < ApplicationRecord
+	has_many_attached :images
+
 	validates :code, presence: true
 	validates :price, presence: true
 	validates :location, presence: true
