@@ -3,7 +3,12 @@
 		<% @i = @i + 1 %>
 		<div class="col-12 col-md-6 mb-3" id="property-<%= @i %>">
 			<div class="card">
-				<%= image_tag('1.jpg', class: "card-img-top mb-0", style: "height:180px;") %>
+				<%= image_tag(property.images.first, class: "card-img-top mb-0", style: "height:180px;") %>
+				<div id="property-<%= @i %>-images">
+					<% property.images.each do |image| %>
+						<%= image_tag(image, class: "card-img-top mb-0", hidden: true) %>
+					<% end %>
+				</div> 
 			 	<div class="card-body">
 			 		<span class="badge badge-warning p-1 mr-0 ml-0" id="property-<%= @i %>-property_type"><%= property.property_type %> en venta</span>
 			 		<span class="badge badge-secondary p-1 mr-0 ml-0" id="property-<%= @i %>-property_status"><%= property.property_status %></span>

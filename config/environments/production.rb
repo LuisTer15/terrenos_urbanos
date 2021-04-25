@@ -88,4 +88,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Store files on Amazon S3.
+  config.active_storage.service = :amazon
+  #adds use of master.key file to decrypt credentials.yml.enc file
+  config.require_master_key = true
 end
