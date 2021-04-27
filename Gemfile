@@ -35,6 +35,7 @@ gem 'popper_js', '~> 1.14.5'
 gem 'coffee-script-source', '1.8.0'
 gem 'social-share-button'
 gem 'aws-sdk-s3', '~> 1'
+gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
