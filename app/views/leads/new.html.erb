@@ -123,6 +123,7 @@
                if ($('#property-modal-images-md > img').length > 0 || $('#property-modal-images-sm > div').length > 0 ) {
                  $('#property-modal-images-md > img').remove()
                  $('#property-modal-images-sm > div').remove()
+                 $('#property-modal-carousel-indicators > li').remove()
                  $("#property-"+i+"-images > img").each(function() {
                    var property_image_path = $( this ).attr( "src" );
                    $("#property-modal-images-md").append('<img src='+property_image_path+' class="w-100 mt-1 mb-1">');
@@ -199,6 +200,7 @@
           if ($('#property-modal-images-md > img').length > 0 || $('#property-modal-images-sm > div').length > 0 ) {
             $('#property-modal-images-md > img').remove()
             $('#property-modal-images-sm > div').remove()
+            $('#property-modal-carousel-indicators > li').remove()
             $("#property-"+i+"-images > img").each(function() {
               var property_image_path = $( this ).attr( "src" );
               $("#property-modal-images-md").append('<img src='+property_image_path+' class="w-100 mt-1 mb-1">');
