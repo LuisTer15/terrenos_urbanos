@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
 	before_action :private_access
 
 	def index
-		@properties = Property.all
+		@properties = Property.order(active: :desc, code: :asc)
 	end
 
 	def new
