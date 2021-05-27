@@ -11,7 +11,7 @@ class PropertiesController < ApplicationController
 
 	def create
 		@property = Property.new(property_params)
-		@property.images.attach(params[:images])
+		@property.images.attach(property_params[:images])
 		if @property.save
 			redirect_to properties_path, notice: "La propiedad fue creada con éxito"
 		else
