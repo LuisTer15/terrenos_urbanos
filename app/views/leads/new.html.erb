@@ -119,6 +119,13 @@
                   $("#property-modal-description").text(property_property_type);
                };
 
+               // CALCULATES PRICES X M2
+               var property_price_land_m2 = parseInt(property_price.replace(/[,\/]/g, '')) / parseFloat(property_area_land)
+               $('#property-modal-price_land_m2').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 0}).format(property_price_land_m2));
+
+               var property_price_build_m2 = parseInt(property_price.replace(/[,\/]/g, '')) / parseFloat(property_area_build)
+               $('#property-modal-price_build_m2').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 0}).format(property_price_build_m2));
+
                // LOADS PROPERTY IMAGES IN MODAL
                if ($('#property-modal-images-md > img').length > 0 || $('#property-modal-images-sm > div').length > 0 ) {
                  $('#property-modal-images-md > img').remove()
@@ -195,6 +202,13 @@
            } else {
              $("#property-modal-description").text(property_property_type);
           };
+
+          // CALCULATES PRICES X M2
+          var property_price_land_m2 = parseInt(property_price.replace(/[,\/]/g, '')) / parseFloat(property_area_land)
+          $('#property-modal-price_land_m2').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 0}).format(property_price_land_m2));
+
+          var property_price_build_m2 = parseInt(property_price.replace(/[,\/]/g, '')) / parseFloat(property_area_build)
+          $('#property-modal-price_build_m2').text(new Intl.NumberFormat('en-US', {maximumFractionDigits: 0}).format(property_price_build_m2));
 
           // LOADS PROPERTY IMAGES IN MODAL
           if ($('#property-modal-images-md > img').length > 0 || $('#property-modal-images-sm > div').length > 0 ) {
