@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-	before_action :private_access
+	before_action :private_access, except: [:new, :create]
 
 	def index
 		@properties = Property.order(active: :desc, code: :asc)
@@ -11,9 +11,8 @@ class PropertiesController < ApplicationController
 
 	def create
 		@property = Property.new(property_params)
-		@property.images.attach(property_params[:images])
 		if @property.save
-			redirect_to properties_path, notice: "La propiedad fue creada con éxito"
+			redirect_to properties_pivijay_path, notice: "La propiedad fue creada con éxito"
 		else
 			render :new
 		end
