@@ -1,6 +1,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6">
+			<% if @property.errors.any? %>
+				<div class="alert alert-danger">
+					<ul>
+						<% @property.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
 			<br>
 			<h2> <%= form_title_properties %></h2>
 			<br>
@@ -15,15 +24,24 @@
 			</div>
 			<br>
 
-			<% if @property.errors.any? %>
-				<div class="alert alert-danger">
-					<ul>
-						<% @property.errors.full_messages.each do |msg| %>
-							<li><%= msg %></li>
+			<div>
+				<% if @property.images.attached? %>
+					<table class="table table-sm table-bordered table-striped text-center">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+						<% @property.images.each do |image| %>
+							<tr>
+								<td><%= image_tag(image, class: "card-img-top mb-0") %></td>
+								<td><%= link_to "Eliminar", delete_image_attachment_property_url(image.signed_id), 
+											method: :delete, 
+											data: { confirm: "¿Estas seguro de eliminar esta imagen?"} %></td>
+							</tr>
 						<% end %>
-					</ul>
-				</div>
-			<% end %>
+					</table>
+				<% end %>
+			</div>
 
 			<div class="pb-3 mb-3">
 			<% if signed_in? %>

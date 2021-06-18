@@ -41,6 +41,12 @@ class PropertiesController < ApplicationController
 		redirect_to properties_path, notice: "La propiedad fue eliminada con éxito"
 	end
 
+	def delete_image_attachment
+		@image = ActiveStorage::Blob.find_signed(params[:id])
+		@image.purge_later
+		redirect_to properties_path
+	end
+
 	private
 		def property_params
 			params.require(:property).permit(:code, :price, :location, :address, 
