@@ -1,26 +1,105 @@
-<div class="container">
+<!--NAVBAR-->
+<%= render 'leads/properties-navbar' %>
+<!--END NAVBAR-->
+
+<div class="container mb-3 pb-3" style="margin-top: 90px;">
 	<div class="row">
-		<div class="col-12">
-			<h1><%= @property.address %></h1>
-			<br>
-			<h3>Código:</h3>
-			<p><%= @property.code %></p>
+		<!-- Images Column for md and up-->
+		<div class="col-7 d-none d-lg-inline mb-3" id="property-page-images-md">
+		  <% @property.images.each do |image| %>
+		  	<%= image_tag(image, class: "img-fluid m-1") %>
+		  <% end %>
+		</div><!-- END Images Column for md and up -->
 
-			<h3>Coordenadas Localización:</h3>
-			<p><%= @property.location %></p>
+		<!-- Images Column for sm-->
+		<div class="col-12 d-lg-none">
+		  <div id="propertyCarousel" class="carousel slide mt-3" data-interval="false">
+		    <ol class="carousel-indicators" id="property-page-carousel-indicators">
+		      
+		    </ol>
+		    <div class="carousel-inner" id="property-page-images-sm">
+		      <% @property.images.each do |image| %>
+		      	<div class="carousel-item"><%= image_tag(image, class: "img-fluid m-1") %></div>
+		      <% end %>
+		    </div>
+		    <a class="carousel-control-prev" href="#propertyCarousel" role="button" data-slide="prev">
+		      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="carousel-control-next" href="#propertyCarousel" role="button" data-slide="next">
+		      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+		  </div>
+		</div><!-- END Images Column for sm -->
 
-			<h3>Área terreno:</h3>
-			<p><%=@property.area_land %></p>
+		<!-- Description Column -->
+		<div class="col-12 col-lg-5">
+		  <div class="card">
+		     <div class="card-body">
+		        <h4 class="card-title pt-3" >$ <span id="property-page-price"></span><%= @property.price %></h4>
+		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Terreno): </small>$ <span id="property-page-price_land_m2"><%= @property.price / @property.area_land %></span></h6>
+		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Construido): </small>$ <span id="property-page-price_build_m2"><%= @property.price / @property.area_build %></span></h6>
 
-			<h3>Área construida:</h3>
-			<p><%= @property.area_build %></p>
+		        <br>
+		        <h6 class="card-subtitle mb-2"><small># Dormitorios: </small><span id="property-page-room_count"><%= @property.room_count %></span> | <small># Baños: </small><span id="property-page-bathroom_count"><%= @property.bathroom_count %></span></h6>
 
-			<h3># dormitorios:</h3>
-			<p><%= @property.room_count %></p>
+		        <h6 class="card-subtitle mb-2"><small>Área construida: </small><span id="property-page-area_build"></span><%= @property.area_build %> m2</h6>
 
-			<h3># baños:</h3>
-			<p><%= @property.bathroom_count %></p>
+		        <h6 class="card-subtitle mb-2"><small>Área terreno: </small><span id="property-page-area_land"></span><%= @property.area_land %> m2</h6>
 
+		        <p class="card-text mb-0" ><small id="property-page-address"><%= @property.address %></small></p>
+
+		        <br>
+		        <h6 class="card-subtitle mb-2">Descripción</h6>
+		        <p class="card-text" id="property-page-description"><%= @property.description %></p>
+		      </div>
+		   </div>
+		   <div class="card mt-3">
+		      <div class="card-body">
+		        <h6 class="card-title text-muted">Contacta al anunciante:</h5>
+		        <div>
+		          <%= form_for @lead do |f| %>
+		             <div class="form-group">
+		               <%= f.text_field :property_code_lead, class: "form-control", id: "property-modal-code-lead", readonly: true %>
+		             </div>
+		             <div class="form-group">
+		               <%= f.text_field :name_lead, class: "form-control", placeholder: "Ingresa tu nombre" %>
+		             </div>
+		             <div class="form-group">
+		               <%= f.text_field :email_lead, class: "form-control", placeholder: "Ingresa tu email" %>
+		             </div>
+		             <div class="form-group">
+		               <%= f.number_field :phonenumber_lead, class: "form-control", placeholder: "Ingresa tu número de contacto" %>
+		             </div>
+		             <div class="form-group">
+		               <%= f.text_field :message_lead, class: "form-control", placeholder: "Envia un mensaje (Opcional)" %>
+		             </div>
+		             <div>
+		               <%= f.submit 'Enviar formulario', class: "btn btn-primary btn-block mb-3" %>
+		             </div>
+		          <% end %>
+		          </div>
+		      </div>
+		   </div>
 		</div>
+		<!-- END Description Column -->
 	</div>
-</div>
+</div> 
+
+<!--FOOTER-->
+<%= render 'static_pages/footer' %>
+<!--END FOOTER-->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// Loads carousel indicators per images quantity
+		property_page_images_length = $('#property-page-images-sm > div').length
+		for (var a = 0; a < property_page_images_length ; ++a) {
+			$("#property-page-carousel-indicators").append('<li data-target="#carouselExampleIndicators" data-slide-to="'+a+'"></li>');
+		};
+
+		$("#property-page-images-sm > div").first().addClass("active")
+		$("#property-page-carousel-indicators > li").first().addClass("active")
+	});
+</script>
