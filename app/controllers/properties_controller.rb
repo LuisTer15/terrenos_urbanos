@@ -20,6 +20,7 @@ class PropertiesController < ApplicationController
 
 	def show
 		@property = Property.find(params[:id])
+		@lead = Lead.new
 	end
 
 	def edit

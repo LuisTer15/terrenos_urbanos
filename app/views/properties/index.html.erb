@@ -25,6 +25,7 @@
 					<th># BAÑOS</th>
 					
 					<th></th>
+					<th></th>
 				</tr>
 				<% @properties.each do |property| %>
 					<tr>
@@ -39,6 +40,7 @@
 						<td><%= property.room_count %></td>
 						<td><%= property.bathroom_count %></td>
 
+						<td><%= link_to "Ver", property_path(property), class: "btn btn-secondary m-2" %></td>
 						<td><%= link_to "Editar", edit_property_path(property), class: "btn btn-success m-2" %></td>
 					</tr>
 				<% end %>

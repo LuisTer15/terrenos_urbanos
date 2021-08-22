@@ -6,6 +6,7 @@
         <span class="badge badge-warning p-2" id="property-modal-property_type"></span>
         <span class="badge badge-secondary p-2 ml-2" id="property-modal-property_status"></span>
         <span class="badge badge-secondary p-2 ml-2" id="property-modal-code"></span>
+        <span hidden class="badge badge-secondary p-2 ml-2" id="property-modal-id"></span>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -42,7 +43,8 @@
             <div class="col-12 col-lg-5">
               <div class="card">
                  <div class="card-body">
-                    <h4 class="card-title" >$ <span id="property-modal-price"></span></h4>
+                    <%= link_to "Ver más información", property_path(3), target: :_blank, class: "btn btn-outline-dark btn-block mb-2" %>
+                    <h4 class="card-title pt-3" >$ <span id="property-modal-price"></span></h4>
                     <h6 class="card-subtitle mb-2"><small>Precio m2 (Terreno): </small>$ <span id="property-modal-price_land_m2"></span></h6>
                     <h6 class="card-subtitle mb-2"><small>Precio m2 (Construido): </small>$ <span id="property-modal-price_build_m2"></span></h6>
 
@@ -58,33 +60,6 @@
                     <br>
                     <h6 class="card-subtitle mb-2">Descripción</h6>
                     <p class="card-text" id="property-modal-description"></p>
-                  </div>
-               </div>
-               <div class="card mt-3">
-                  <div class="card-body">
-                    <h6 class="card-title text-muted">Contacta al anunciante:</h5>
-                    <div>
-                      <%= form_for @lead do |f| %>
-                         <div class="form-group">
-                           <%= f.text_field :property_code_lead, class: "form-control", id: "property-modal-code-lead", readonly: true %>
-                         </div>
-                         <div class="form-group">
-                           <%= f.text_field :name_lead, class: "form-control", placeholder: "Ingresa tu nombre" %>
-                         </div>
-                         <div class="form-group">
-                           <%= f.text_field :email_lead, class: "form-control", placeholder: "Ingresa tu email" %>
-                         </div>
-                         <div class="form-group">
-                           <%= f.number_field :phonenumber_lead, class: "form-control", placeholder: "Ingresa tu número de contacto" %>
-                         </div>
-                         <div class="form-group">
-                           <%= f.text_field :message_lead, class: "form-control", placeholder: "Envia un mensaje (Opcional)" %>
-                         </div>
-                         <div>
-                           <%= f.submit 'Enviar formulario', class: "btn btn-primary btn-block" %>
-                         </div>
-                      <% end %>
-                      </div>
                   </div>
                </div>
             </div>
