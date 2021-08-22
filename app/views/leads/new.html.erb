@@ -72,7 +72,7 @@
 
         // LOADS TOOLTIP TO MARKERS
         for (var i = 1; i < table_db_length; ++i) {
-           this["marker"+i].bindTooltip($( '#property-'+i+'-code').text(), {direction: 'top'});
+           this["marker"+i].bindTooltip($( '#property-'+i+'-id').text(), {direction: 'top'});
         };
 
         // SHOWS propertyS INFO
@@ -84,11 +84,10 @@
             var found_property = parseFloat($( "#property-"+i ).find( "#property-"+i+"-location_lat" ).text());
             if (selected_property == found_property) {
 
-               var property_code = $( "#property-"+i+"-code" ).text();
-               $('#property-modal-code').text(property_code);
-
                var property_id = $( "#property-"+i+"-id" ).text();
-               $('#property-modal-id').text(property_id);
+               $('#property-modal-id').text('COD: '+property_id);
+               var property_link = '/properties/'+property_id
+               $('#property-modal-link').attr('href', property_link);
 
                var property_property_type = $( "#property-"+i+"-property_type" ).text();
                $('#property-modal-property_type').text(property_property_type);
@@ -168,12 +167,11 @@
           $('#propertyModal').modal('show');
           var property_id = $(this).attr("id");
           var i = property_id.match(/\d+/);
-          
-          var property_code = $( "#property-"+i+"-code" ).text();
-          $('#property-modal-code').text(property_code);
 
           var property_id = $( "#property-"+i+"-id" ).text();
-          $('#property-modal-id').text(property_id);
+          $('#property-modal-id').text('COD: '+property_id);
+          var property_link = '/properties/'+property_id
+          $('#property-modal-link').attr('href', property_link);
 
           var property_property_type = $( "#property-"+i+"-property_type" ).text();
           $('#property-modal-property_type').text(property_property_type);

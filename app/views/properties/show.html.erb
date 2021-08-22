@@ -38,8 +38,8 @@
 		  <div class="card">
 		     <div class="card-body">
 		        <h4 class="card-title pt-3" >$ <span id="property-page-price"></span><%= number_with_delimiter(@property.price) %></h4>
-		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Terreno): </small>$ <span id="property-page-price_land_m2"><%= number_with_delimiter(@property.price / @property.area_land) %></span></h6>
-		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Construido): </small>$ <span id="property-page-price_build_m2"><%= number_with_delimiter(@property.price / @property.area_build) %></span></h6>
+		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Terreno): </small>$ <span id="property-page-price_land_m2"><%= @property.area_land == 0 ? 0 : number_with_delimiter(@property.price / @property.area_land) %></span></h6>
+		        <h6 class="card-subtitle mb-2"><small>Precio m2 (Construido): </small>$ <span id="property-page-price_build_m2"><%= @property.area_build == 0 ? 0 : number_with_delimiter(@property.price / @property.area_build) %></span></h6>
 
 		        <br>
 		        <h6 class="card-subtitle mb-2"><small># Dormitorios: </small><span id="property-page-room_count"><%= @property.room_count %></span> | <small># Baños: </small><span id="property-page-bathroom_count"><%= @property.bathroom_count %></span></h6>

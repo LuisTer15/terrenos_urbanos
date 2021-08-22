@@ -13,9 +13,9 @@
 			 		<span class="badge badge-warning p-1 mr-0 ml-0" id="property-<%= @i %>-property_type"><%= property.property_type %> en venta</span>
 			 		<span class="badge badge-secondary p-1 mr-0 ml-0" id="property-<%= @i %>-property_status"><%= property.property_status %></span>
 			 		<% if signed_in? %>
-			 			<span class="badge badge-secondary p-1 ml-0" id="property-<%= @i %>-code">COD: <%= link_to property.code, edit_property_path(property), class: "text-white" %></span>
+			 			<span class="badge badge-secondary p-1 ml-0" id="property-<%= @i %>-code">COD: <%= link_to property.id, edit_property_path(property), class: "text-white" %></span>
 			 		<% else %>
-			 			<span class="badge badge-secondary p-1 ml-0" id="property-<%= @i %>-code">COD: <%= property.code %></span>
+			 			<span class="badge badge-secondary p-1 ml-0" id="property-<%= @i %>-code">COD: <%= property.id %></span>
 			 		<% end %>
 			 		
 			    	<h4 class="card-title mt-1" >$ <span id="property-card-<%= @i %>-price"><%= property.price %></span></h4>
