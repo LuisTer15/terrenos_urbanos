@@ -61,7 +61,7 @@
 		        <div>
 		          <%= form_for @lead do |f| %>
 		             <div class="form-group">
-		               <%= f.text_field :property_code_lead, class: "form-control", id: "property-modal-code-lead", readonly: true %>
+		               <%= f.text_field :property_code_lead, class: "form-control", id: "property-modal-code-lead", readonly: true, placeholder: "COD: "+@property.id.to_s %>
 		             </div>
 		             <div class="form-group">
 		               <%= f.text_field :name_lead, class: "form-control", placeholder: "Ingresa tu nombre" %>

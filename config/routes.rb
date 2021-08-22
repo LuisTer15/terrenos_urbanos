@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   #resources :users, only: [:new, :create]
   resources :leads, except: [:new]
   get '/propiedades/pivijay', to: 'leads#new', as: 'properties_pivijay'
+  
   resources :properties do
     member do
       delete :delete_image_attachment
     end
   end
+
   resources :lots
   #get '/lots', to: 'lots#index'
   #get '/lots/new', to: 'lots#new', as: 'new_lot'

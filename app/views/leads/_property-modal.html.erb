@@ -6,6 +6,7 @@
         <span class="badge badge-warning p-2" id="property-modal-property_type"></span>
         <span class="badge badge-secondary p-2 ml-2" id="property-modal-property_status"></span>
         <span class="badge badge-secondary p-2 ml-2" id="property-modal-code"></span>
+        <span hidden class="badge badge-secondary p-2 ml-2" id="property-modal-id"></span>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -42,7 +43,7 @@
             <div class="col-12 col-lg-5">
               <div class="card">
                  <div class="card-body">
-                    <button class="btn btn-outline-dark btn-block mb-2">Ver más información</button>
+                    <%= link_to "Ver más información", property_path(3), target: :_blank, class: "btn btn-outline-dark btn-block mb-2" %>
                     <h4 class="card-title pt-3" >$ <span id="property-modal-price"></span></h4>
                     <h6 class="card-subtitle mb-2"><small>Precio m2 (Terreno): </small>$ <span id="property-modal-price_land_m2"></span></h6>
                     <h6 class="card-subtitle mb-2"><small>Precio m2 (Construido): </small>$ <span id="property-modal-price_build_m2"></span></h6>
