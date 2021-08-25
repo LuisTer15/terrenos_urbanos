@@ -53,7 +53,7 @@ class PropertiesController < ApplicationController
 			params.require(:property).permit(:code, :price, :location, :address, 
 											:area_land, :area_build, :room_count, 
 											:bathroom_count, :property_type, 
-											:stratus, :description, :property_status,
-											:active, images: [] )
+											:stratus, :description, :contact_info,
+											:property_status, :active, images: [])
 		end
 end
