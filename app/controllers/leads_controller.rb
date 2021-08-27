@@ -7,7 +7,6 @@ class LeadsController < ApplicationController
 
 	def new
 		@properties = Property.where(active: true).order(updated_at: :desc)
-		
 		@i = 0
 		@lead = Lead.new
 	end

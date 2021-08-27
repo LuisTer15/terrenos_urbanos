@@ -20,7 +20,11 @@ class PropertiesController < ApplicationController
 
 	def show
 		@property = Property.find(params[:id])
-		@lead = Lead.new
+		if @property.active?
+			@lead = Lead.new
+		else
+			redirect_to properties_pivijay_path
+		end
 	end
 
 	def edit
