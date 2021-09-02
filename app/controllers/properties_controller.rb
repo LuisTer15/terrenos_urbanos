@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-	before_action :private_access, except: [:new, :create]
+	before_action :private_access, except: [:new, :create, :show]
 
 	def index
 		@properties = Property.order(active: :desc, code: :asc)
