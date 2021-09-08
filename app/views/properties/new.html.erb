@@ -1,3 +1,33 @@
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-md navbar-light" id="app_navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <p class="h4 d-none d-lg-inline-block mt-2 text-center logo_text">TERRENOS URBANOS</p>
+      <p class="h4 d-inline-block d-lg-none mt-2 logo_text">TERRENOS<br>URBANOS</p>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <% if signed_in? %>
+          <li class="nav-item"><%= link_to "Administar Propiedades", properties_path, class: "m-3 text-reset" %></li>
+          <li class="nav-item"><%= link_to "Salir", logout_path, method: :delete, class: "m-3 text-reset" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Publicar una propiedad", new_property_path, class: "btn btn-primary" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav><!--END NAVBAR-->
+
+<!--JUMBOTRON-->
+<div class="jumbotron jumbotron-fluid text-center mb-0" id="head">
+  <div class="container">
+    <h1 class="display-4 purple_color">Publicar una propiedad</h1>
+    <p class="lead mb-3">Contáctanos por whatsapp en el siguiente número: +57 3012078436. O envia los datos de tu propiedad en el formulario de esta página.</p>
+    <%= link_to "Ver todas las propiedades", properties_pivijay_path, class: "btn btn-outline-secondary m-2" %>
+  </div>  
+</div><!--END JUMBOTRON-->
 
 <%= render "form" %>
 
